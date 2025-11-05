@@ -39,7 +39,7 @@ const App = () => {
   }, [loading]);
 
   return (
-    <Router>
+    <Router basename="/">
       <div className="bg-black text-white min-h-screen font-sans flex flex-col">
         <Loader isLoading={loading} />
         {!loading && (
@@ -60,6 +60,14 @@ const App = () => {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/gallery-upload" element={<GalleryUpload />} />
                 <Route path="/destinations/:id" element={<DestinationPage />} />
+                <Route path="*" element={
+                  <>
+                    <Hero />
+                    <CardsSection />
+                    <About />
+                    <Contact />
+                  </>
+                } />
               </Routes>
             </main>
             <Footer />

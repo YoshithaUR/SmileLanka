@@ -8,7 +8,7 @@ const Navbar = () => {
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const location = useRouterLocation();
   const navigate = useRouterNavigate();
-  const navItems = ["home", "about", "destinations", "contac"];
+  const navItems = ["home", "about", "destinations", "contact"];
   const linkRefs = useRef([]);
 
   useEffect(() => {
@@ -108,7 +108,7 @@ const Navbar = () => {
               </RouterLink>
             </li>
             <li className="hover:text-yellow-400 cursor-pointer">
-              <ScrollLink to="contac" smooth={true} duration={600} offset={-70} className="block h-full w-full">
+              <ScrollLink to="contact" smooth={true} duration={600} offset={-70} className="block h-full w-full">
                 Contact Us
               </ScrollLink>
             </li>
