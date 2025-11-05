@@ -103,6 +103,11 @@ const Navbar = () => {
               </ScrollLink>
             </li>
             <li className="hover:text-yellow-400 cursor-pointer">
+              <RouterLink to="/packages" className="block h-full w-full">
+                Packages
+              </RouterLink>
+            </li>
+            <li className="hover:text-yellow-400 cursor-pointer">
               <ScrollLink to="contac" smooth={true} duration={600} offset={-70} className="block h-full w-full">
                 Contact Us
               </ScrollLink>
