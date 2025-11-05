@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  // Popular destinations data - Sri Lankan destinations
+ 
   const allDestinations = [
     {
       id: 1,
       name: "Sigiriya Rock Fortress",
       description: "Ancient rock fortress and palace ruin situated in the central Matale District.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/20/15/e9/2015e974ef15ba77ca9206d4166f764b.jpg",
       rating: 4.8,
       link: "/destinations/sigiriya-rock-fortress"
     },
@@ -18,7 +18,7 @@ const About = () => {
       id: 2,
       name: "Ella Rock",
       description: "Stunning hiking destination with panoramic views of the surrounding hills.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/21/5f/7a/215f7a6ca135ecafde0d31592a6c457d.jpg",
       rating: 4.9,
       link: "/destinations/ella-rock"
     },
@@ -26,7 +26,7 @@ const About = () => {
       id: 3,
       name: "Yala National Park",
       description: "Famous wildlife reserve known for its leopard population and diverse fauna.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/29/a7/70/29a77078076cab3beb6bfccc073a0acc.jpg",
       rating: 4.7,
       link: "/destinations/yala-national-park"
     },
@@ -34,7 +34,7 @@ const About = () => {
       id: 4,
       name: "Galle Fort",
       description: "UNESCO World Heritage site with well-preserved Dutch colonial architecture.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/42/6a/7c/426a7c600b8958994d16a273773a43b1.jpg",
       rating: 4.6,
       link: "/destinations/galle-fort"
     },
@@ -42,7 +42,7 @@ const About = () => {
       id: 5,
       name: "Adam's Peak",
       description: "Sacred mountain with a pilgrimage site at its summit, offering stunning sunrise views.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/4f/ca/f7/4fcaf7f3fa7753f8d381557712fe023c.jpg",
       rating: 4.5,
       link: "/destinations/adams-peak"
     },
@@ -50,7 +50,7 @@ const About = () => {
       id: 6,
       name: "Mirissa Beach",
       description: "Popular beach destination known for whale watching and golden sand shores.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/86/1d/95/861d9595e4ca7d5b4cdb6e823c016f95.jpg",
       rating: 4.7,
       link: "/destinations/mirissa-beach"
     },
@@ -58,7 +58,7 @@ const About = () => {
       id: 7,
       name: "Kandy Temple",
       description: "Sacred Buddhist temple housing the Tooth Relic of the Buddha in the royal palace.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/dc/fc/9b/dcfc9bfc1fe8ad99432501bd20533bc7.jpg",
       rating: 4.8,
       link: "/destinations/kandy-temple"
     },
@@ -66,7 +66,7 @@ const About = () => {
       id: 8,
       name: "Nuwara Eliya",
       description: "Picturesque hill country town known as 'Little England' for its colonial architecture.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/1200x/71/2d/f7/712df76d0a1b7710ee416b9dcb00eaa1.jpg",
       rating: 4.4,
       link: "/destinations/nuwara-eliya"
     },
@@ -74,7 +74,7 @@ const About = () => {
       id: 9,
       name: "Dambulla Cave Temple",
       description: "Ancient cave temple complex with over 150 Buddha statues and stunning murals.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/29/87/ab/2987ab4ecc6d6fcde9063d882b44ea1f.jpg",
       rating: 4.6,
       link: "/destinations/dambulla-cave-temple"
     },
@@ -82,7 +82,7 @@ const About = () => {
       id: 10,
       name: "Unawatuna Beach",
       description: "Beautiful crescent-shaped beach with coral reefs, perfect for swimming and snorkeling.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/1200x/69/9b/f7/699bf70d68f5a93524346bb382da73e9.jpg",
       rating: 4.5,
       link: "/destinations/unawatuna-beach"
     },
@@ -90,7 +90,7 @@ const About = () => {
       id: 11,
       name: "Horton Plains",
       description: "High-altitude plateau with diverse wildlife, endemic plants, and the famous World's End.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/28/de/9f/28de9f2b3257e65f9eaf62d42597606b.jpg",
       rating: 4.7,
       link: "/destinations/horton-plains"
     },
@@ -98,7 +98,7 @@ const About = () => {
       id: 12,
       name: "Anuradhapura",
       description: "Ancient city with well-preserved ruins of the first Sri Lankan capital and sacred Bodhi tree.",
-      image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/bb/1c/d6/bb1cd672c9e59700a2ab78b6037bd0de.jpg",
       rating: 4.6,
       link: "/destinations/anuradhapura"
     }
@@ -110,37 +110,37 @@ const About = () => {
       id: 1,
       title: "Mountain Adventures",
       description: "Experience the breathtaking beauty of Sri Lanka's mountain ranges with our guided hiking tours.",
-      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
     },
     {
       id: 2,
       title: "Beach Getaways",
       description: "Relax on pristine beaches and enjoy water sports in some of the most beautiful coastal areas.",
-      image: "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg"
     },
     {
       id: 3,
       title: "Wildlife Safaris",
       description: "Embark on thrilling safaris to see elephants, leopards, and other wildlife in their natural habitats.",
-      image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg"
     },
     {
       id: 4,
       title: "Cultural Tours",
       description: "Discover ancient temples, historical sites, and experience the rich culture of Sri Lanka.",
-      image: "https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg"
     },
     {
       id: 5,
       title: "City Exploration",
       description: "Discover the vibrant urban life, architecture, and nightlife of Sri Lanka's major cities.",
-      image: "https://images.unsplash.com/photo-1594999293740-704bc4b75245?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg"
     },
     {
       id: 6,
       title: "Water Sports",
       description: "Dive into thrilling water activities including surfing, snorkeling, and boat trips in crystal clear waters.",
-      image: "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      image: "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg"
     }
   ];
 
@@ -315,7 +315,7 @@ const About = () => {
             className="text-5xl font-bold mb-6"
             data-aos="fade-down"
           >
-            ABOUT <span className="text-yellow-400">SMILE SRI LANKA</span>
+            ABOUT <span className="text-yellow-400">US</span>
           </h1>
           <p 
             className="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto"
@@ -357,7 +357,7 @@ const About = () => {
             </div>
           </div>
 
-          <Link to="/read-more-about">
+          <Link to="/about-more">
             <button 
               className="mt-10 bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition"
               data-aos="zoom-in"
@@ -371,6 +371,7 @@ const About = () => {
 
       {/* DESTINATIONS SECTION */}
       <section
+      id="destination"
         className="py-16 bg-gradient-to-br from-gray-900 to-black"
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
@@ -491,9 +492,11 @@ const About = () => {
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                     <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                 
                     <button className="w-full py-2 border-2 border-yellow-500 text-yellow-500 rounded-lg hover:bg-yellow-500 hover:text-black transition">
                       Read More
                     </button>
+                    
                   </div>
                 </div>
               ))}

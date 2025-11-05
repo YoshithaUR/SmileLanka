@@ -1,115 +1,146 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ReadMoreAbout = () => {
-  const [showMore, setShowMore] = useState(false);
-
   return (
-    <section
-      id="about"
-      className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/736x/f5/dc/ad/f5dcade41729a230001a5b1d03ead500.jpg')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
-        <h1 className="text-5xl font-bold mb-6">
-          ABOUT <span className="text-yellow-400">US</span>
-        </h1>
-
-        <p className="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-          Welcome to <span className="text-yellow-400 font-semibold">Smile Lanka</span> — your
-          ultimate adventure travel partner! We are a passionate team of explorers and travel
-          enthusiasts who believe that the best way to experience life is through adventure.
-        </p>
-
-        <p className="text-gray-300 mt-6 leading-relaxed max-w-3xl mx-auto">
-          Our mission is to help travelers discover the untamed beauty of Sri Lanka — from misty
-          mountain hikes and breathtaking waterfalls to thrilling safaris and coastal escapes. Each
-          journey we plan is crafted with care, ensuring authentic local experiences, comfort, and
-          unforgettable memories.
-        </p>
-
-        {/* Info Boxes */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:bg-yellow-400/20 transition">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-2">🌄 Our Vision</h3>
-            <p>
-              To inspire people to explore the world responsibly and embrace adventure while
-              protecting nature and local cultures.
-            </p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:bg-yellow-400/20 transition">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-2">🧭 Our Mission</h3>
-            <p>
-              To offer meaningful and sustainable travel experiences that connect travelers with the
-              soul of Sri Lanka.
-            </p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:bg-yellow-400/20 transition">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-2">🤝 Our Promise</h3>
-            <p>
-              We promise unforgettable adventures, professional guides, eco-friendly practices, and
-              a true sense of connection with every destination we visit.
-            </p>
-          </div>
+    <section className="w-full bg-gray-900 text-white">
+      {/* Hero Section */}
+      <div
+        className="bg-cover bg-center flex items-center justify-center relative h-screen w-full"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1621847473222-d85c022cbf07?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1325')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="relative z-10 text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            Discover <span className="text-yellow-400">Sri Lanka</span>
+          </h1>
+          <p className="text-lg max-w-2xl mx-auto text-gray-200">
+            A paradise island where ancient culture, breathtaking landscapes, and
+            golden beaches meet — Smile Lanka invites you to explore the soul of
+            adventure.
+          </p>
         </div>
-
-        {/* Read More Button */}
-        <button
-          onClick={() => setShowMore(true)}
-          className="mt-10 bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition"
-        >
-          Read More
-        </button>
       </div>
 
-      {/* Modal for Read More */}
-      {showMore && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-8 relative animate-fadeIn text-gray-800">
-            <button
-              onClick={() => setShowMore(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl font-bold"
+      {/* Story Section */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-center mb-10 text-yellow-400">
+          Our Story
+        </h2>
+        <p className="text-gray-300 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+          Born from a love for exploration and a deep connection to the island’s
+          natural beauty, Smile Lanka was founded to showcase the true spirit of
+          Sri Lanka. From misty mountain trails to vibrant coastal towns, we craft
+          journeys that touch your heart and awaken your adventurous soul.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {[
+            {
+              title: "Authentic Experiences",
+              text: "We connect travelers with real Sri Lankan life — from local food tours to traditional village stays.",
+              img: "https://i.pinimg.com/736x/c3/89/6d/c3896d054ccc22c7a94b1fb2a4e9649a.jpg",
+            },
+            {
+              title: "Adventure & Nature",
+              text: "Whether it’s hiking through Ella’s trails or diving in Hikkaduwa, every trip is a new adventure.",
+              img: "https://i.pinimg.com/736x/93/ba/50/93ba50c6e8e4606cfd76880e2ae4ef36.jpg",
+            },
+            {
+              title: "Sustainability First",
+              text: "We promote eco-tourism by supporting local communities and protecting the island’s ecosystems.",
+              img: "https://i.pinimg.com/1200x/0d/83/4f/0d834ffc5fbf368b4558f3aa4bcf9db5.jpg",
+            },
+          ].map((card, i) => (
+            <div
+              key={i}
+              className="bg-white/10 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
             >
-              ✕
-            </button>
-
-            <h2 className="text-3xl font-bold mb-4 text-yellow-500">More About Smile Lanka</h2>
-            <p className="leading-relaxed text-gray-700 mb-4">
-              At Smile Lanka, we believe travel is not just about destinations — it’s about
-              experiences, emotions, and connections. Our team of local experts designs each package
-              with attention to culture, adventure, and relaxation, ensuring a perfect balance for
-              every traveler.
-            </p>
-            <p className="leading-relaxed text-gray-700 mb-4">
-              Whether you’re hiking through the lush tea plantations of Ella, surfing in Arugam Bay,
-              or exploring the ancient wonders of Sigiriya, we make sure your journey feels unique
-              and unforgettable.
-            </p>
-            <p className="leading-relaxed text-gray-700">
-              Our travelers become part of our extended family — we go the extra mile to provide
-              warmth, safety, and joy on every trip. Choose Smile Lanka, and let’s explore paradise
-              together!
-            </p>
-
-            <div className="mt-6 text-center">
-              <button
-                onClick={() => setShowMore(false)}
-                className="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition"
-              >
-                Close
-              </button>
+              <img
+                src={card.img}
+                alt={card.title}
+                className="w-full h-56 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-gray-300 text-sm">{card.text}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Quote Section */}
+      <div className="relative bg-yellow-400 py-20 text-center text-black">
+        <h2 className="text-3xl font-bold mb-4">
+          “Travel not to escape life, but for life not to escape you.”
+        </h2>
+        <p className="text-lg font-medium">— Smile Lanka Team</p>
+      </div>
+
+      {/* Team Section */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-center mb-10 text-yellow-400">
+          Meet Our Team
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            {
+              name: "Kavindu Perera",
+              role: "Adventure Guide",
+              img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+              name: "Dilani Fernando",
+              role: "Cultural Expert",
+              img: "https://randomuser.me/api/portraits/women/44.jpg",
+            },
+            {
+              name: "Ruwan Silva",
+              role: "Nature Specialist",
+              img: "https://randomuser.me/api/portraits/men/48.jpg",
+            },
+            {
+              name: "Nimali Jayasuriya",
+              role: "Travel Planner",
+              img: "https://randomuser.me/api/portraits/women/68.jpg",
+            },
+          ].map((member, i) => (
+            <div
+              key={i}
+              className="bg-white/10 p-6 rounded-xl shadow-md hover:bg-yellow-400/10 transition"
+            >
+              <img
+                src={member.img}
+                alt={member.name}
+                className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400"
+              />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-400">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer CTA */}
+      <div className="bg-black/90 py-16 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to Explore Sri Lanka with Us?
+        </h2>
+        <p className="text-gray-400 mb-8">
+          Let us create your next unforgettable adventure — tailored just for you.
+        </p>
+        <a
+          href="/contact"
+          className="bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition"
+        >
+          Contact Us
+        </a>
+      </div>
     </section>
   );
 };
