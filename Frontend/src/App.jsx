@@ -39,7 +39,7 @@ const App = () => {
   }, [loading]);
 
   return (
-    <Router basename="/">
+    <Router>
       <div className="bg-black text-white min-h-screen font-sans flex flex-col">
         <Loader isLoading={loading} />
         {!loading && (
