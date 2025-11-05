@@ -12,6 +12,7 @@ import Gallery from "./pages/Gallary.jsx";
 import GalleryUpload from "./pages/GallaryUp.jsx";
 import Loader from "./components/Loader.jsx";
 import PackageTemplate from "./pages/packages/PackageTemplate.jsx";
+import ReadMoreAbout from "./pages/ReadMoreAbout.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -60,6 +61,7 @@ const App = () => {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/gallery-upload" element={<GalleryUpload />} />
                 <Route path="/destinations/:id" element={<DestinationPage />} />
+                <Route path="/about-more" element={<ReadMoreAbout />} />
                 <Route path="*" element={
                   <>
                     <Hero />

@@ -10,23 +10,45 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero"
 
 const App = () => {
-  const [showAnimation, setShowAnimation] = useState(true);
-  
-  if (showAnimation) {
-    return <Animation onFinish={() => setShowAnimation(false)} />;
-  }
+
 
   return (
     <Router>
       <div className="bg-black text-white min-h-screen font-sans">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
-          {/* <Route path="/packages" element={<Packages />} /> */}
+          <Route path="/" element={
+            <div>
+              <div id="home">
+                <Hero />
+              </div>
+              <div id="packages" 
+             >
+                {/* <div className="max-w-6xl mx-auto text-center">
+                  <h1 className="text-4xl font-bold mb-10">Adventure Packages</h1>
+                  <p className="text-xl text-gray-300">Explore our exciting adventure packages.</p>
+                </div> */}
+              </div>
+              <div id="about">
+                <About />
+              </div>
+              <div id="destinations">
+               <Gallery/>
+              </div>
+              <div id="contac">
+                <Contact />
+              </div>
+              <div id="gallary">
+                <Gallery />
+              </div>
+              <div id="gallery-upload">
+                <GalleryUpload />
+              </div>
+            </div>
+          } />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/destinations" element={<Destinations />} /> */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallary" element={<Gallery />} />
           <Route path="/gallery-upload" element={<GalleryUpload />} />
           <Route path="/about-more" element={<ReadMoreAbout />} />
         </Routes>

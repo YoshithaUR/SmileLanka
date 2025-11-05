@@ -8,7 +8,7 @@ const Navbar = () => {
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const location = useRouterLocation();
   const navigate = useRouterNavigate();
-  const navItems = ["home", "about", "destinations", "contact"];
+  const navItems = ["home", "about", "destinations", "contact", "gallery"];
   const linkRefs = useRef([]);
 
   useEffect(() => {
@@ -84,13 +84,20 @@ const Navbar = () => {
                 Packages
               </RouterLink>
             </li>
+            {/* Added Gallery link for package pages */}
+            <li className="hover:text-yellow-400 cursor-pointer">
+              <RouterLink to="/gallery" className="block h-full w-full">
+                Gallery
+              </RouterLink>
+            </li>
           </>
         ) : (
           <>
             <li className="hover:text-yellow-400 cursor-pointer">
-              <ScrollLink to="home" smooth={true} duration={600} offset={-70} className="block h-full w-full">
+              {/* Changed from ScrollLink to RouterLink for consistent navigation */}
+              <RouterLink to="/" className="block h-full w-full">
                 Home
-              </ScrollLink>
+              </RouterLink>
             </li>
             <li className="hover:text-yellow-400 cursor-pointer">
               <ScrollLink to="about" smooth={true} duration={600} offset={-70} className="block h-full w-full">
@@ -98,7 +105,7 @@ const Navbar = () => {
               </ScrollLink>
             </li>
             <li className="hover:text-yellow-400 cursor-pointer">
-              <ScrollLink to="destinations" smooth={true} duration={600} offset={-70} className="block h-full w-full">
+              <ScrollLink to="destination" smooth={true} duration={600} offset={-70} className="block h-full w-full">
                 Destinations
               </ScrollLink>
             </li>
@@ -111,6 +118,12 @@ const Navbar = () => {
               <ScrollLink to="contact" smooth={true} duration={600} offset={-70} className="block h-full w-full">
                 Contact Us
               </ScrollLink>
+            </li>
+            {/* Added Gallery link for regular pages */}
+            <li className="hover:text-yellow-400 cursor-pointer">
+              <RouterLink to="/gallery" className="block h-full w-full">
+                Gallery
+              </RouterLink>
             </li>
           </>
         )}
