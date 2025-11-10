@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-// Removed unused import
-// import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const CardsSection = () => {
   const cards = [
@@ -52,9 +51,15 @@ const CardsSection = () => {
     };
   }, []);
 
-  // Removed nextCard and prevCard functions as we're removing navigation arrows
+  const nextCard = () => {
+    setDirection("next");
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+  };
 
-  // Removed keyboard navigation useEffect hook
+  const prevCard = () => {
+    setDirection("prev");
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
@@ -137,7 +142,25 @@ const CardsSection = () => {
           )}
         </div>
         
-        {/* Removed Navigation Arrows for both mobile and desktop views */}
+        {/* Navigation Arrows - Show only on mobile view */}
+        {isMobile && (
+          <div className="flex justify-center mt-8 space-x-6">
+            <button
+              onClick={prevCard}
+              className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+              aria-label="Previous card"
+            >
+              <ChevronLeft size={28} />
+            </button>
+            <button
+              onClick={nextCard}
+              className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+              aria-label="Next card"
+            >
+              <ChevronRight size={28} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
