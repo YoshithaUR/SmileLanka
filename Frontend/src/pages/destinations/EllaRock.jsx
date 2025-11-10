@@ -78,7 +78,6 @@ const EllaRock = () => {
     activities: ["Hiking", "Photography", "Nature Walks", "Sunrise Viewing"],
     facts: [
       "360-degree panoramic views",
-      "Moderate 2-3 hour hike",
       "Best at sunrise",
       "Tea plantation trails",
       "Popular Instagram spot",

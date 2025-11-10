@@ -29,12 +29,12 @@ const PackageTemplate = () => {
           image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         }
       ],
-      image: "https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/1200x/2e/26/84/2e26848d189b1fcaf0d5e8e8b700a571.jpg",
       gallery: [
-        "https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "https://i.pinimg.com/1200x/d7/18/f7/d718f7ed1b6fd374affd12f6aae41434.jpg",
+        "https://i.pinimg.com/1200x/9d/fd/83/9dfd8303be2fbc944dd12d453dc1f1cd.jpg",
+        "https://i.pinimg.com/1200x/c4/fe/02/c4fe0243d396ccfec04c459dde21bd35.jpg",
+        "https://i.pinimg.com/1200x/e7/ce/bd/e7cebd77fc42a7900ae363fe3cfd11ec.jpg"
       ],
       price: "$899",
       duration: "5 days",
@@ -87,12 +87,12 @@ const PackageTemplate = () => {
           image: "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         }
       ],
-      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/1200x/af/a8/41/afa841010e8008279b2c224f6c9ae165.jpg",
       gallery: [
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "https://i.pinimg.com/1200x/f1/d0/92/f1d092ebb5901147602281a6e5292456.jpg",
+        "https://i.pinimg.com/1200x/17/ec/a8/17eca8517399bd3a00674435f185be13.jpg",
+        "https://i.pinimg.com/736x/2c/44/1e/2c441ed9e2bfa1a099e525ce70bc8f20.jpg",
+        "https://i.pinimg.com/1200x/b7/2d/ad/b72dad18d27d89c103c62ede27e3b4c6.jpg"
       ],
       price: "$1,499",
       duration: "7 days",
@@ -147,12 +147,12 @@ const PackageTemplate = () => {
           image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         }
       ],
-      image: "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/1200x/a2/b5/fe/a2b5fe5523438b97633e343d4c370fe2.jpg",
       gallery: [
-        "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "https://i.pinimg.com/1200x/3d/de/89/3dde89d9ca8c25c8c08d9ba780d7ccee.jpg",
+        "https://i.pinimg.com/1200x/9b/9c/fb/9b9cfb4d0d07f0a82b8a52e20d1672be.jpg",
+        "https://i.pinimg.com/1200x/a0/2a/2e/a02a2e879a7d87fcdfed1d320adb21ce.jpg",
+        "https://i.pinimg.com/1200x/16/bf/a4/16bfa4aa448fc2da6e0c45e39348e00f.jpg"
       ],
       price: "$2,799",
       duration: "10 days",
@@ -196,25 +196,25 @@ const PackageTemplate = () => {
         {
           title: "Historical Exploration",
           content: "Journey through Sri Lanka's rich historical sites including the ancient cities of Anuradhapura and Polonnaruwa, the rock fortress of Sigiriya, and the sacred city of Kandy. Each destination offers unique insights into the island's ancient civilizations and architectural marvels.",
-          image: "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/736x/30/46/e9/3046e9570249a5a9fd506ffc39931f6f.jpg"
         },
         {
           title: "Cultural Immersion",
           content: "Experience authentic Sri Lankan culture through traditional dance performances, cooking classes with local families, and visits to artisan workshops. Learn about ancient crafts like pottery, wood carving, and batik painting directly from skilled craftspeople who have preserved these traditions for generations.",
-          image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/736x/67/2c/20/672c20b289e3a60b838b5459b035d0ee.jpg"
         },
         {
           title: "Spiritual Journey",
           content: "Discover the spiritual side of Sri Lanka through visits to sacred Buddhist temples, Hindu shrines, and colonial churches. Participate in Buddhist meditation sessions, witness traditional religious ceremonies, and learn about the island's diverse religious practices that have coexisted for centuries.",
-          image: "https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/736x/2d/98/62/2d9862fc3cf46db6ab20074824a2d99e.jpg"
         }
       ],
-      image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/61/bf/8e/61bf8e746fbd4f2a68b112841ebc236d.jpg",
       gallery: [
-        "https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1598532109210-4ef0c957b5d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "https://i.pinimg.com/736x/34/c2/b4/34c2b47a32c1cfaf1b74a5d17ae1d1d2.jpg",
+        "https://i.pinimg.com/736x/d2/ac/e5/d2ace5a57350322e85b7e0adbb0f5cc3.jpg",
+        "https://i.pinimg.com/736x/4c/25/af/4c25aff3a4a7e367e9c9bb942ed22454.jpg",
+        "https://i.pinimg.com/1200x/bf/a0/54/bfa0541bdc31f6c85e4dbc189f8f5392.jpg"
       ],
       price: "$1,299",
       duration: "7 days",
@@ -245,7 +245,7 @@ const PackageTemplate = () => {
         "Historical site visits",
         "Spiritual journey opportunities"
       ],
-      color: "green"
+      color: "orange"
     },
     "beach-paradise": {
       id: 5,
@@ -256,25 +256,25 @@ const PackageTemplate = () => {
         {
           title: "Luxurious Beach Accommodations",
           content: "Stay at premium beachfront resorts with direct access to pristine sandy beaches. Enjoy spacious rooms with ocean views, private balconies, and all modern amenities. Most properties feature multiple swimming pools, beachside dining options, and luxurious spa facilities.",
-          image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/1200x/82/1d/97/821d97af995e4c858e4d731e85f321d4.jpg"
         },
         {
           title: "Exciting Water Sports",
           content: "Experience the thrill of various water sports including snorkeling, scuba diving, surfing, jet skiing, and sailing. Our expert instructors ensure your safety while helping you make the most of these exciting activities. All equipment is included in the package.",
-          image: "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/736x/9b/2a/b1/9b2ab11fde0a963aa5fab181f99d3c2f.jpg"
         },
         {
           title: "Leisurely Beach Activities",
           content: "Unwind with relaxing beach activities such as yoga sessions, beach volleyball, sunset cruises, and fishing trips. Enjoy beachside dining experiences with fresh seafood and local cuisine while watching the sunset over the Indian Ocean.",
-          image: "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          image: "https://i.pinimg.com/1200x/bc/57/e4/bc57e45bcfc06b64c9400cfae6e26f1c.jpg"
         }
       ],
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "https://i.pinimg.com/736x/d4/f7/ea/d4f7ea439a05bffad51a6a6e99337961.jpg",
       gallery: [
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1505228395891-9a51e7f86e1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        "https://i.pinimg.com/1200x/a5/c8/4b/a5c84b8d2aa6ab31948a618ff3d42574.jpg",
+        "https://i.pinimg.com/1200x/e1/e5/19/e1e51966ce9279a838ba016545a239bb.jpg",
+        "https://i.pinimg.com/736x/77/b5/e0/77b5e0e45540bc47fb285bec43689416.jpg",
+        "https://i.pinimg.com/736x/40/ac/ca/40acca7bd1c51b1d31fc93d4abd27aaf.jpg"
       ],
       price: "$1,799",
       duration: "6 days",
@@ -307,7 +307,69 @@ const PackageTemplate = () => {
         "Sunset cruise experience"
       ],
       color: "teal"
+    },
+     "wildlife-explorer": {
+      
+      id: 6,
+      name: "Wildlife Explorer",
+      description: "Experience Sri Lanka’s incredible wildlife up close in national parks and nature reserves",
+       longDescription: "Our Wildlife Explorer package is designed for nature and adventure enthusiasts who wish to experience Sri Lanka’s breathtaking biodiversity. From thrilling jeep safaris to guided birdwatching and luxury stays in eco-lodges, this package brings you closer to the wild heart of the island while ensuring comfort and sustainability throughout your journey.",
+  detailedInfo: [
+    {
+      title: "Safari Adventures in Yala & Wilpattu",
+      content: "Embark on unforgettable safari experiences in Sri Lanka’s most famous national parks — Yala and Wilpattu. Witness majestic leopards, elephants, sloth bears, crocodiles, and diverse birdlife in their natural habitats with professional wildlife guides ensuring a safe and educational experience.",
+      image: "https://i.pinimg.com/1200x/a7/b1/84/a7b18422aa536f06787a56a3cad3eb65.jpg"
+    },
+    {
+      title: "Stay at Eco-Lodges & Jungle Resorts",
+      content: "Enjoy comfort blended with nature at premium eco-lodges and jungle retreats located near national parks. These properties are designed for sustainability with natural materials, open-air dining, and stunning forest views. Relax by the campfire under starlit skies after a day of adventure.",
+      image: "https://i.pinimg.com/1200x/dc/a3/10/dca310fc68843d2b49bd8c19665cb80e.jpg"
+    },
+    {
+      title: "Birdwatching & Nature Trails",
+      content: "Sri Lanka is a paradise for birdwatchers, home to over 400 species including 33 endemics. Join our guided nature trails through wetlands, forests, and hill country sanctuaries to spot colorful species such as the Sri Lankan Blue Magpie, Junglefowl, and Crimson-backed Flameback.",
+      image: "https://i.pinimg.com/736x/f8/c1/a6/f8c1a6354a93efb398d798cdd8b8820c.jpg"
     }
+  ],
+  image: "https://i.pinimg.com/736x/b5/92/cf/b592cfe32effeba60f062cf7faf7a0b6.jpg",
+  gallery: [
+    "https://i.pinimg.com/736x/02/64/d9/0264d9da41fc4f74f2c87017c484c650.jpg",
+    "https://i.pinimg.com/1200x/db/80/dd/db80dd2eee98267bcc26a074bf56e705.jpg",
+    "https://i.pinimg.com/736x/7a/4b/a0/7a4ba05a3156765bb3553f3654f99da4.jpg",
+    "https://i.pinimg.com/736x/b8/ce/21/b8ce21a0ab8106131db7ff2d61002664.jpg"
+  ],
+  price: "$1,599",
+  duration: "8 days",
+  rating: 4.9,
+  bestTime: "February to September",
+  inclusions: [
+    "Accommodation in 4-star eco-lodges and nature resorts",
+    "All meals included",
+    "Two guided safaris in Yala & Wilpattu",
+    "Birdwatching & nature walks",
+    "Transportation with private chauffeur",
+    "Entrance fees to all parks",
+    "Professional wildlife guide",
+    "Airport transfers",
+    "24/7 assistance"
+  ],
+  exclusions: [
+    "International flights",
+    "Personal expenses",
+    "Alcoholic beverages",
+    "Travel insurance",
+    "Tips and gratuities",
+    "Optional night safaris or extra excursions"
+  ],
+  facts: [
+    "Witness leopards and elephants in the wild",
+    "Stay at sustainable eco-lodges",
+    "Expert-guided safaris and birdwatching",
+    "Covers both Yala and Wilpattu parks",
+    "Ideal for wildlife photographers"
+  ],
+  color: "green"
+}
   };
 
   const packageData = packages[id] || packages["silver-adventure"];
@@ -320,7 +382,7 @@ const PackageTemplate = () => {
   // Determine color classes based on package
   const getColorClasses = (type) => {
     switch (packageData.color) {
-      case 'yellow':
+      case 'orange':
         return type === 'rating' ? 'bg-yellow-500/20 text-yellow-500' :
                type === 'price' ? 'bg-yellow-500/20 text-yellow-500' :
                type === 'heading' ? 'text-yellow-500' :

@@ -79,7 +79,6 @@ const KandyTemple = () => {
       "Temple Visit and Worship",
       "Cultural Exploration",
       "Attend Esala Perahera Festival",
-      "Photography",
       "Explore Kandy Lake and nearby attractions",
     ],
     facts: [

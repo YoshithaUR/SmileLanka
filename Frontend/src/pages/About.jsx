@@ -403,14 +403,7 @@ const About = () => {
             </button>
           </Link>
           
-          <button 
-            onClick={() => navigate('/#contac')}
-            className="mt-4 bg-transparent border-2 border-yellow-500 text-yellow-500 px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition"
-            data-aos="zoom-in"
-            data-aos-delay="600"
-          >
-            Contact Us
-          </button>
+         
         </div>
       </section>
 

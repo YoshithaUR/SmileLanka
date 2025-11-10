@@ -81,7 +81,7 @@ const Anuradhapura = () => {
       "Visiting Buddhist Temples and Stupas",
       "Cultural Photography",
       "Historical Tours",
-      "Pilgrimage Visits",
+    
     ],
     facts: [
       "UNESCO World Heritage Site since 1982",

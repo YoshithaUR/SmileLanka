@@ -79,7 +79,6 @@ const AdamPeak= () => {
       "Night Hike to the Summit",
       "Sunrise Viewing",
       "Pilgrimage and Worship",
-      "Photography",
       "Nature Observation",
     ],
     facts: [

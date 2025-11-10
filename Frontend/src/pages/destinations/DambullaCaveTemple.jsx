@@ -79,7 +79,6 @@ const DambullaCaveTemple = () => {
       "Temple Exploration",
       "Viewing Ancient Cave Paintings",
       "Meditation and Worship",
-      "Photography",
       "Climbing to the Cave Complex",
     ],
     facts: [

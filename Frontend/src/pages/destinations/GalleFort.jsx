@@ -81,7 +81,6 @@ const GalleFort= () => {
         "Sightseeing",
         "Cultural Exploration",
         "Shopping and Dining",
-        "Photography",
       ],
       facts: [
         "Built by the Portuguese in 1588",

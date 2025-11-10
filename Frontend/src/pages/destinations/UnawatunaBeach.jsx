@@ -79,7 +79,6 @@ const Unawatuna = () => {
     "Swimming and Sunbathing",
     "Snorkeling and Diving",
     "Beachfront Dining",
-    "Visiting the Japanese Peace Pagoda",
     "Exploring Galle Fort",
   ],
   facts: [

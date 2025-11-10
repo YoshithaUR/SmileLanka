@@ -35,7 +35,7 @@ const App = () => {
               <div id="destinations">
                <Gallery/>
               </div>
-              <div id="contac">
+              <div id="contact">
                 <Contact />
               </div>
               <div id="gallary">

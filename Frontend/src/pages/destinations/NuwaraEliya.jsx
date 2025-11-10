@@ -78,7 +78,6 @@ const NuwaraEliya = () => {
     activities: [
       "Tea Estate Tours",
       "Boat Riding on Lake Gregory",
-      "Sightseeing and Photography",
       "Hiking at Horton Plains",
       "Exploring Botanical Gardens",
     ],

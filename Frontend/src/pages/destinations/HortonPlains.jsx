@@ -79,7 +79,6 @@ const HortonPlains = () => {
       "Hiking to World's End",
       "Visiting Baker's Falls",
       "Wildlife and Bird Watching",
-      "Nature Photography",
       "Exploring Montane Forest Trails",
     ],
     facts: [

@@ -43,10 +43,11 @@ const slides = [
 // Background images that correspond to the carousel images
 const backgroundImages = [
   "https://images.unsplash.com/photo-1598152642931-bf0e8635fdf8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
-  "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+  "https://images.unsplash.com/photo-1567157802189-aadc856131dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1187",
   "https://images.pexels.com/photos/16508231/pexels-photo-16508231.jpeg",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  "https://i.pinimg.com/736x/74/f7/5e/74f75eb6e231c942012bbdb6466dc861.jpg",
+  "https://images.pexels.com/photos/4403903/pexels-photo-4403903.jpeg",
+  "https://images.pexels.com/photos/4185785/pexels-photo-4185785.jpeg",
+  
 ];
 
 const Hero = () => {

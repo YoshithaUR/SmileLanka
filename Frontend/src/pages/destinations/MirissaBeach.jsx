@@ -78,9 +78,7 @@ const MirissaBeach = () => {
     activities: [
       "Whale Watching",
       "Surfing",
-      "Snorkeling",
       "Sunbathing",
-      "Photography",
       "Beach Dining",
     ],
     facts: [
