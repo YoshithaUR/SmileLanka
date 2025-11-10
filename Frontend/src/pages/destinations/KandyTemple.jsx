@@ -1,73 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
-const KandyTeample= () => {
+const KandyTemple = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
   
   // Destination details
   const destination = {
-    id: 7,
-  
-  name: "Kandy Temple",
-  description:
-    "Sacred Buddhist temple housing the Tooth Relic of the Buddha in the royal palace.",
-  longDescription:
-    "The Temple of the Sacred Tooth Relic, known locally as Sri Dalada Maligawa, is one of the most sacred Buddhist temples in Sri Lanka. Located in the heart of Kandy, the temple enshrines a tooth relic of Lord Buddha, making it a deeply spiritual site for Buddhists around the world. The temple complex, with its golden-roofed shrine, intricate Kandyan architecture, and serene surroundings by Kandy Lake, stands as a symbol of Sri Lanka’s rich cultural and religious traditions. It also plays a central role in the annual Esala Perahera, a grand festival celebrated with traditional dances, drumming, and beautifully decorated elephants.",
-
-  detailedInfo: [
-    {
-      title: "Historical and Religious Significance",
-      content:
-        "The Sacred Tooth Relic is believed to have been brought to Sri Lanka from India in the 4th century AD. Over the centuries, it became a symbol of sovereignty, with rulers claiming the right to govern only if they possessed the relic. The temple was built in the 16th century by King Wimaladharmasuriya I and remains one of the most important pilgrimage sites for Buddhists.",
-      image:
-        "https://images.unsplash.com/photo-1612438211389-cb4d1c1a8a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Architectural Splendor",
-      content:
-        "The temple complex showcases the grandeur of Kandyan architecture, featuring intricate wood carvings, golden decorations, and traditional frescoes. The main shrine is surrounded by beautiful courtyards, ponds, and smaller shrines. The golden canopy above the relic chamber adds to the temple’s majestic beauty and spiritual atmosphere.",
-      image:
-        "https://images.unsplash.com/photo-1575488652400-bb84c69c3b77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Esala Perahera Festival",
-      content:
-        "One of Asia’s most spectacular festivals, the Kandy Esala Perahera is held annually in July or August to honor the Sacred Tooth Relic. The event features traditional Kandyan dancers, fire performances, drummers, and hundreds of elephants adorned with colorful garments, reflecting Sri Lanka’s deep-rooted cultural heritage.",
-      image:
-        "https://images.unsplash.com/photo-1625414075000-4161e2bc4a09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-  ],
-
-  image:
-    "https://images.unsplash.com/photo-1612438211389-cb4d1c1a8a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
-  gallery: [
-    "https://images.unsplash.com/photo-1612438211389-cb4d1c1a8a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1625414075000-4161e2bc4a09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1575488652400-bb84c69c3b77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1603969172506-fd357c00d89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-  ],
-
-  rating: 4.9,
-  location: "Kandy, Central Province, Sri Lanka",
-  bestTime: "December to April and July to August (Esala Perahera season)",
-  activities: [
-    "Temple Visit and Worship",
-    "Cultural Exploration",
-    "Attend Esala Perahera Festival",
-    "Photography",
-    "Explore Kandy Lake and nearby attractions",
-  ],
-  facts: [
-    "Houses the sacred tooth relic of Lord Buddha",
-    "Built in the 16th century by King Wimaladharmasuriya I",
-    "Central to the annual Esala Perahera festival",
-    "Symbol of sovereignty in ancient Sri Lanka",
-    "UNESCO World Heritage Site since 1988",
-  ],
-}
-
+    id:7,
+    name: "Kandy Temple",
+    description:
+      "Sacred Buddhist temple housing the Tooth Relic of the Buddha in the royal palace.",
+    longDescription:
+      "The Temple of the Sacred Tooth Relic, known locally as Sri Dalada Maligawa, is one of the most sacred Buddhist temples in Sri Lanka. Located in the heart of Kandy, the temple enshrines a tooth relic of Lord Buddha, making it a deeply spiritual site for Buddhists around the world. The temple complex, with its golden-roofed shrine, intricate Kandyan architecture, and serene surroundings by Kandy Lake, stands as a symbol of Sri Lanka's rich cultural and religious traditions. It also plays a central role in the annual Esala Perahera, a grand festival celebrated with traditional dances, drumming, and beautifully decorated elephants.",
+    detailedInfo: [
+      {
+        id: "historical",
+        title: "Historical and Religious Significance",
+        content:
+          "The Sacred Tooth Relic is believed to have been brought to Sri Lanka from India in the 4th century AD. Over the centuries, it became a symbol of sovereignty, with rulers claiming the right to govern only if they possessed the relic. The temple was built in the 16th century by King Wimaladharmasuriya I and remains one of the most important pilgrimage sites for Buddhists.",
+        additionalDetails: [
+          "The Sacred Tooth Relic is believed to have been brought to Sri Lanka in the 4th century AD by Princess Hemamali and her husband Prince Dantha.",
+          "The relic has been moved 16 times to protect it from foreign invasions, with the current temple being its 8th permanent location.",
+          "King Wimaladharmasuriya I built the first temple structure in 1595, which was later expanded by successive rulers.",
+          "The temple complex includes several important structures: the main shrine, octagonal pavilion, and several museums housing royal artifacts.",
+          "The relic is housed in a golden casket within a golden casket within a golden casket, symbolizing the layers of protection and reverence."
+        ],
+        image:
+          "https://i.pinimg.com/736x/25/3f/33/253f33b09a8371e5c4ba477d6963b62e.jpg",
+      },
+      {
+        id: "architectural",
+        title: "Architectural Splendor",
+        content:
+          "The temple complex showcases the grandeur of Kandyan architecture, featuring intricate wood carvings, golden decorations, and traditional frescoes. The main shrine is surrounded by beautiful courtyards, ponds, and smaller shrines. The golden canopy above the relic chamber adds to the temple's majestic beauty and spiritual atmosphere.",
+        additionalDetails: [
+          "The temple's architecture represents the finest example of Kandyan style, with its distinctive roof design and ornate wooden carvings.",
+          "The octagonal pavilion (Patirippuwa) is a masterpiece of Kandyan architecture, built in 1802 and covered in bronze sheets.",
+          "The temple complex covers an area of 60,000 square feet and includes several courtyards, halls, and shrines.",
+          "The two-story museum houses royal regalia, including crowns, swords, and ceremonial objects used in the Esala Perahera.",
+          "The golden canopy (Guldastha) above the relic chamber weighs over 100 kilograms and is made of pure gold."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/a5/24/d4/a524d43a66467d5bb84bddcef6972615.jpg",
+      },
+      {
+        id: "esala",
+        title: "Esala Perahera Festival",
+        content:
+          "One of Asia's most spectacular festivals, the Kandy Esala Perahera is held annually in July or August to honor the Sacred Tooth Relic. The event features traditional Kandyan dancers, fire performances, drummers, and hundreds of elephants adorned with colorful garments, reflecting Sri Lanka's deep-rooted cultural heritage.",
+        additionalDetails: [
+          "The Esala Perahera is a 10-day festival that culminates with the inner chamber ritual (Randoli Perahera) on the final five nights.",
+          "Over 5,000 dancers, drummers, and performers participate in the procession, along with decorated elephants carrying the sacred casket.",
+          "The festival dates back over 1,000 years and was originally held to honor the goddess Pattini for bringing rain during droughts.",
+          "The procession route covers 4 kilometers through the streets of Kandy, attracting over 1 million spectators annually.",
+          "The festival includes five types of traditional dance: Kandyan, Sabaragamuwa, Uva-Paran, Low Country, and Devil dances."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/fb/41/d8/fb41d8abb7a8ec5e3204dfae61867b98.jpg",
+      },
+    ],
+    image:
+      "https://i.pinimg.com/1200x/58/9a/04/589a04876211c1b078e183f7d3ac5128.jpg",
+       Dimage:
+      "https://i.pinimg.com/1200x/a4/76/c4/a476c4d8e912b208ebbe2b3938518143.jpg",
+    gallery: [
+      "https://i.pinimg.com/736x/5a/72/bb/5a72bbde9d82f9a29bea94af16b5a96e.jpg",
+      "https://i.pinimg.com/736x/e6/bf/77/e6bf7797a077b090bc8fb8e51bc7eb87.jpg",
+      "https://i.pinimg.com/736x/62/11/16/62111636780bdc9d181d8243a6e6df2e.jpg",
+      "https://i.pinimg.com/736x/f5/85/85/f585855311d80b863caab30f14f0e943.jpg",
+    ],
+    rating: 4.9,
+    location: "Kandy, Central Province, Sri Lanka",
+    bestTime: "December to April and July to August (Esala Perahera season)",
+    activities: [
+      "Temple Visit and Worship",
+      "Cultural Exploration",
+      "Attend Esala Perahera Festival",
+      "Photography",
+      "Explore Kandy Lake and nearby attractions",
+    ],
+    facts: [
+      "Houses the sacred tooth relic of Lord Buddha",
+      "Built in the 16th century by King Wimaladharmasuriya I",
+      "Central to the annual Esala Perahera festival",
+      "Symbol of sovereignty in ancient Sri Lanka",
+      "UNESCO World Heritage Site since 1988",
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
@@ -84,7 +106,7 @@ const KandyTeample= () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${destination.image}')`
+            backgroundImage: `url('${destination.Dimage}')`
           }}
         />
         <div className="absolute inset-0 bg-black/70"></div>
@@ -187,6 +209,7 @@ const KandyTeample= () => {
             {destination.detailedInfo.map((info, index) => (
               <div 
                 key={index} 
+                id={`section-${info.id}`}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -210,6 +233,10 @@ const KandyTeample= () => {
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
+                    onClick={() => {
+                      setModalContent(info);
+                      setShowModal(true);
+                    }}
                   >
                     Learn More
                   </button>
@@ -337,8 +364,56 @@ const KandyTeample= () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal for additional details */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold text-yellow-500">{modalContent.title}</h3>
+                <button 
+                  className="text-white hover:text-gray-300 text-2xl"
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={modalContent.image} 
+                  alt={modalContent.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+              
+              <p className="text-gray-300 text-lg mb-6">{modalContent.content}</p>
+              
+              <h4 className="text-xl font-bold text-white mb-4">Additional Information:</h4>
+              <ul className="space-y-3">
+                {modalContent.additionalDetails && modalContent.additionalDetails.map((detail, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-8 flex justify-end">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default KandyTeample;
+export default KandyTemple;

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Packages = () => {
   const packages = [
@@ -99,6 +100,137 @@ const Packages = () => {
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [direction, setDirection] = useState("next"); // Track animation direction
+
+  // Check if it's mobile view
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  const nextPackage = () => {
+    setDirection("next");
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % packages.length);
+  };
+
+  const prevPackage = () => {
+    setDirection("prev");
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + packages.length) % packages.length);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextPackage();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevPackage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  // Package card component
+  const PackageCard = ({ pkg, index }) => (
+    <Link 
+      to={`/packages/${pkg.link}`}
+      className={`bg-gray-800 rounded-2xl overflow-hidden shadow-xl border-2 flex flex-col h-full ${
+        pkg.color === 'yellow' 
+          ? 'border-yellow-500 shadow-yellow-500/20 hover:border-yellow-400' 
+          : pkg.color === 'blue' 
+            ? 'border-blue-500 shadow-blue-500/20 hover:border-blue-400'
+            : pkg.color === 'green'
+              ? 'border-green-500 shadow-green-500/20 hover:border-green-400'
+              : pkg.color === 'teal'
+                ? 'border-teal-500 shadow-teal-500/20 hover:border-teal-400'
+                : 'border-gray-700 hover:border-gray-600'
+      } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
+      {pkg.color === 'yellow' && (
+        <div className="bg-yellow-500 text-gray-900 text-center py-2 font-bold">
+          MOST POPULAR
+        </div>
+      )}
+      
+      <div className="h-48 overflow-hidden">
+        <img 
+          src={pkg.image} 
+          alt={pkg.name}
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        />
+      </div>
+      
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold mb-2 text-white">{pkg.name}</h3>
+        <p className="text-gray-300 text-sm mb-4 flex-grow">{pkg.description}</p>
+        
+        <div className="flex justify-between items-center mb-4">
+          <span className="text-yellow-500 font-bold text-lg">{pkg.price}</span>
+          <span className="text-gray-400 text-sm">{pkg.duration}</span>
+        </div>
+        
+        <ul className="mb-6 space-y-2 flex-grow">
+          {pkg.features.map((feature, index) => (
+            <li key={index} className="flex items-start">
+              <svg 
+                className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
+                  pkg.color === 'yellow' 
+                    ? 'text-yellow-500' 
+                    : pkg.color === 'blue' 
+                      ? 'text-blue-500'
+                      : pkg.color === 'green'
+                        ? 'text-green-500'
+                        : pkg.color === 'teal'
+                          ? 'text-teal-500'
+                          : 'text-gray-500'
+                }`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 mt-auto ${
+          pkg.color === 'yellow' 
+            ? 'bg-yellow-500 text-gray-900 hover:bg-yellow-600 hover:text-white hover:shadow-lg' 
+            : pkg.color === 'blue' 
+              ? 'bg-blue-500 text-white hover:bg-blue-600 hover:shadow-lg'
+              : pkg.color === 'green'
+                ? 'bg-green-500 text-white hover:bg-green-600 hover:shadow-lg'
+                : pkg.color === 'teal'
+                  ? 'bg-teal-500 text-white hover:bg-teal-600 hover:shadow-lg'
+                  : 'bg-gray-700 text-white hover:bg-gray-600 hover:shadow-lg'
+        } transform hover:-translate-y-1`}>
+          View Details
+        </button>
+      </div>
+    </Link>
+  );
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -116,91 +248,57 @@ const Packages = () => {
           Discover our carefully crafted adventure packages designed to give you the ultimate Sri Lankan experience.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {packages.map((pkg, index) => (
-            <Link 
-              to={`/packages/${pkg.link}`}
-              key={pkg.id}
-              className={`bg-gray-800 rounded-2xl overflow-hidden shadow-xl border-2 flex flex-col h-full ${
-                pkg.color === 'yellow' 
-                  ? 'border-yellow-500 shadow-yellow-500/20 hover:border-yellow-400' 
-                  : pkg.color === 'blue' 
-                    ? 'border-blue-500 shadow-blue-500/20 hover:border-blue-400'
-                    : pkg.color === 'green'
-                      ? 'border-green-500 shadow-green-500/20 hover:border-green-400'
-                      : pkg.color === 'teal'
-                        ? 'border-teal-500 shadow-teal-500/20 hover:border-teal-400'
-                        : 'border-gray-700 hover:border-gray-600'
-              } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              {pkg.color === 'yellow' && (
-                <div className="bg-yellow-500 text-gray-900 text-center py-2 font-bold">
-                  MOST POPULAR
-                </div>
-              )}
-              
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={pkg.image} 
-                  alt={pkg.name}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                />
+        <div className="relative">
+          {isMobile ? (
+            // Mobile view - show only one card at a time
+            <div className="flex flex-col items-center">
+              <div className={`w-full max-w-md ${direction === "next" ? "animate-slideInRight" : "animate-slideInLeft"}`}>
+                <PackageCard pkg={packages[currentIndex]} index={currentIndex} />
               </div>
               
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-2 text-white">{pkg.name}</h3>
-                <p className="text-gray-300 text-sm mb-4 flex-grow">{pkg.description}</p>
-                
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-yellow-500 font-bold text-lg">{pkg.price}</span>
-                  <span className="text-gray-400 text-sm">{pkg.duration}</span>
-                </div>
-                
-                <ul className="mb-6 space-y-2 flex-grow">
-                  {pkg.features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <svg 
-                        className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
-                          pkg.color === 'yellow' 
-                            ? 'text-yellow-500' 
-                            : pkg.color === 'blue' 
-                              ? 'text-blue-500'
-                              : pkg.color === 'green'
-                                ? 'text-green-500'
-                                : pkg.color === 'teal'
-                                  ? 'text-teal-500'
-                                  : 'text-gray-500'
-                        }`} 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24" 
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 mt-auto ${
-                  pkg.color === 'yellow' 
-                    ? 'bg-yellow-500 text-gray-900 hover:bg-yellow-600 hover:text-white hover:shadow-lg' 
-                    : pkg.color === 'blue' 
-                      ? 'bg-blue-500 text-white hover:bg-blue-600 hover:shadow-lg'
-                      : pkg.color === 'green'
-                        ? 'bg-green-500 text-white hover:bg-green-600 hover:shadow-lg'
-                        : pkg.color === 'teal'
-                          ? 'bg-teal-500 text-white hover:bg-teal-600 hover:shadow-lg'
-                          : 'bg-gray-700 text-white hover:bg-gray-600 hover:shadow-lg'
-                } transform hover:-translate-y-1`}>
-                  View Details
+              {/* Card indicators */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {packages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setDirection(index > currentIndex ? "next" : "prev");
+                      setCurrentIndex(index);
+                    }}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentIndex ? 'bg-yellow-500' : 'bg-gray-600'
+                    }`}
+                    aria-label={`Go to package ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              {/* Navigation Arrows - Show below cards on mobile */}
+              <div className="flex justify-center mt-8 space-x-6">
+                <button
+                  onClick={prevPackage}
+                  className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+                  aria-label="Previous package"
+                >
+                  <ChevronLeft size={28} />
+                </button>
+                <button
+                  onClick={nextPackage}
+                  className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+                  aria-label="Next package"
+                >
+                  <ChevronRight size={28} />
                 </button>
               </div>
-            </Link>
-          ))}
+            </div>
+          ) : (
+            // Desktop view - show all cards in grid
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {packages.map((pkg, index) => (
+                <PackageCard key={pkg.id} pkg={pkg} index={index} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

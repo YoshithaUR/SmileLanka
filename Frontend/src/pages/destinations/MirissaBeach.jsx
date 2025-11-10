@@ -1,74 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
-const MirissBeach= () => {
+const MirissaBeach = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
   
   // Destination details
   const destination = {
     id: 6,
-  
-  name: "Mirissa Beach",
-  description:
-    "A stunning crescent-shaped beach known for whale watching, surfing, and relaxed coastal vibes.",
-  longDescription:
-    "Mirissa Beach, located along Sri Lanka’s southern coastline, is one of the island’s most picturesque and vibrant beach destinations. With its soft golden sands, swaying coconut palms, and turquoise waters, Mirissa offers the perfect balance between relaxation and adventure. It’s particularly famous for whale and dolphin watching, attracting travelers from all over the world who come to witness the majestic blue whales in their natural habitat. Beyond its natural beauty, Mirissa is also a lively hub for beachside dining, surfing, and exploring nearby attractions like Coconut Tree Hill and Parrot Rock Bridge.",
-
-  detailedInfo: [
-    {
-      title: "Whale and Dolphin Watching",
-      content:
-        "Mirissa is one of the best places in the world to spot blue whales and spinner dolphins. Early morning boat tours take visitors out to the deep sea where these magnificent creatures can be seen breaching and playing. The whale watching season runs mainly from November to April, offering unforgettable marine experiences.",
-      image:
-        "https://images.unsplash.com/photo-1590608897129-79da98d15969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Coconut Tree Hill",
-      content:
-        "Located at the eastern end of Mirissa Beach, Coconut Tree Hill is one of the most photographed spots in Sri Lanka. This small palm-covered cliff overlooks the ocean, offering breathtaking sunrise and sunset views. It’s a perfect place for photography and enjoying the tropical sea breeze.",
-      image:
-        "https://images.unsplash.com/photo-1624017228083-8e497d182d4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Surfing and Beach Life",
-      content:
-        "Mirissa’s gentle waves make it an excellent spot for beginner and intermediate surfers. Surf schools along the beach offer lessons and board rentals. The lively beachside cafes, seafood restaurants, and relaxed nightlife add to Mirissa’s charm as a favorite destination for both adventure seekers and those seeking tranquility.",
-      image:
-        "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-  ],
-
-  image:
-    "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
-  gallery: [
-    "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1624017228083-8e497d182d4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1590608897129-79da98d15969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1569420072560-820d8dbe8e24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-  ],
-
-  rating: 4.9,
-  location: "Mirissa, Southern Province, Sri Lanka",
-  bestTime: "November to April",
-  activities: [
-    "Whale Watching",
-    "Surfing",
-    "Snorkeling",
-    "Sunbathing",
-    "Photography",
-    "Beach Dining",
-  ],
-  facts: [
-    "Famous for whale and dolphin watching",
-    "Ideal surfing destination for beginners",
-    "Home to the iconic Coconut Tree Hill viewpoint",
-    "Known for vibrant beach nightlife and seafood cafes",
-    "Crystal-clear waters perfect for swimming and snorkeling",
-  ],
-};
-
+    name: "Mirissa Beach",
+    description:
+      "A stunning crescent-shaped beach known for whale watching, surfing, and relaxed coastal vibes.",
+    longDescription:
+      "Mirissa Beach, located along Sri Lanka's southern coastline, is one of the island's most picturesque and vibrant beach destinations. With its soft golden sands, swaying coconut palms, and turquoise waters, Mirissa offers the perfect balance between relaxation and adventure. It's particularly famous for whale and dolphin watching, attracting travelers from all over the world who come to witness the majestic blue whales in their natural habitat. Beyond its natural beauty, Mirissa is also a lively hub for beachside dining, surfing, and exploring nearby attractions like Coconut Tree Hill and Parrot Rock Bridge.",
+    detailedInfo: [
+      {
+        id: "whale",
+        title: "Whale and Dolphin Watching",
+        content:
+          "Mirissa is one of the best places in the world to spot blue whales and spinner dolphins. Early morning boat tours take visitors out to the deep sea where these magnificent creatures can be seen breaching and playing. The whale watching season runs mainly from November to April, offering unforgettable marine experiences.",
+        additionalDetails: [
+          "Mirissa is considered one of the best places in the world to see blue whales, the largest animals ever to exist on Earth.",
+          "The whale watching season peaks from November to April when blue whales migrate to the area's rich feeding grounds.",
+          "Boat trips typically last 3-4 hours and depart early in the morning (6-7 AM) for the best viewing conditions.",
+          "In addition to blue whales, visitors can spot sperm whales, pilot whales, and several species of dolphins including bottlenose and spinner dolphins.",
+          "The waters off Mirissa are part of a larger whale migration route, making sightings possible year-round, though less frequent during off-peak months."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/4c/4e/34/4c4e34a76f958c2ff098fc06ae992719.jpg",
+      },
+      {
+        id: "coconut",
+        title: "Coconut Tree Hill",
+        content:
+          "Located at the eastern end of Mirissa Beach, Coconut Tree Hill is one of the most photographed spots in Sri Lanka. This small palm-covered cliff overlooks the ocean, offering breathtaking sunrise and sunset views. It's a perfect place for photography and enjoying the tropical sea breeze.",
+        additionalDetails: [
+          "Coconut Tree Hill rises about 30 meters above sea level and offers panoramic 360-degree views of the coastline.",
+          "The hill is easily accessible via a 15-minute walk from the main beach area through local pathways.",
+          "It's one of the most Instagrammed locations in Sri Lanka, with visitors coming specifically for the iconic photo opportunities.",
+          "The best times to visit are early morning for sunrise or late afternoon for sunset, when the light creates dramatic photo opportunities.",
+          "The hill is crowned with several coconut palms that sway in the ocean breeze, creating the perfect tropical silhouette against the sea."
+        ],
+        image:
+          "https://i.pinimg.com/736x/05/4f/f4/054ff48fcfa601cd27a05ae96c945843.jpg",
+      },
+      {
+        id: "surfing",
+        title: "Surfing and Beach Life",
+        content:
+          "Mirissa's gentle waves make it an excellent spot for beginner and intermediate surfers. Surf schools along the beach offer lessons and board rentals. The lively beachside cafes, seafood restaurants, and relaxed nightlife add to Mirissa's charm as a favorite destination for both adventure seekers and those seeking tranquility.",
+        additionalDetails: [
+          "Mirissa has consistent waves suitable for beginners and intermediate surfers, with several surf schools offering lessons and board rentals.",
+          "The best surfing conditions are during the dry season from November to April when offshore winds create cleaner waves.",
+          "Popular surf spots include the main beach area and Point Break, which offers more challenging waves for experienced surfers.",
+          "The beachfront is lined with numerous cafes, restaurants, and bars that cater to both tourists and locals, creating a vibrant social scene.",
+          "Accommodation options range from budget guesthouses to luxury resorts, all within walking distance of the beach."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/e4/50/e3/e450e3e6b3e30fe4faaaee147712cf41.jpg",
+      },
+    ],
+    image:
+      "https://i.pinimg.com/1200x/06/3a/98/063a98bc9201e1a0a417641e2b98c718.jpg",
+      Dimage:
+      "https://i.pinimg.com/1200x/ae/cb/7f/aecb7f826b71d4ac1060373e11498b72.jpg",
+    gallery: [
+      "https://i.pinimg.com/1200x/db/8b/56/db8b562a0650f480139a0073eaa45643.jpg",
+      "https://i.pinimg.com/1200x/3d/f4/66/3df4664524e937a8babfb611c8a105c4.jpg",
+      "https://i.pinimg.com/736x/fb/0a/99/fb0a9945f3a71ad9cebeeba53758fe2d.jpg",
+      "https://i.pinimg.com/736x/9a/c9/9a/9ac99ad5532749fb6c032a8f092e674b.jpg",
+    ],
+    rating: 4.9,
+    location: "Mirissa, Southern Province, Sri Lanka",
+    bestTime: "November to April",
+    activities: [
+      "Whale Watching",
+      "Surfing",
+      "Snorkeling",
+      "Sunbathing",
+      "Photography",
+      "Beach Dining",
+    ],
+    facts: [
+      "Famous for whale and dolphin watching",
+      "Ideal surfing destination for beginners",
+      "Home to the iconic Coconut Tree Hill viewpoint",
+      "Known for vibrant beach nightlife and seafood cafes",
+      "Crystal-clear waters perfect for swimming and snorkeling",
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
@@ -85,7 +107,7 @@ const MirissBeach= () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${destination.image}')`
+            backgroundImage: `url('${destination.Dimage}')`
           }}
         />
         <div className="absolute inset-0 bg-black/70"></div>
@@ -188,6 +210,7 @@ const MirissBeach= () => {
             {destination.detailedInfo.map((info, index) => (
               <div 
                 key={index} 
+                id={`section-${info.id}`}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -211,6 +234,10 @@ const MirissBeach= () => {
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
+                    onClick={() => {
+                      setModalContent(info);
+                      setShowModal(true);
+                    }}
                   >
                     Learn More
                   </button>
@@ -338,8 +365,56 @@ const MirissBeach= () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal for additional details */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold text-yellow-500">{modalContent.title}</h3>
+                <button 
+                  className="text-white hover:text-gray-300 text-2xl"
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={modalContent.image} 
+                  alt={modalContent.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+              
+              <p className="text-gray-300 text-lg mb-6">{modalContent.content}</p>
+              
+              <h4 className="text-xl font-bold text-white mb-4">Additional Information:</h4>
+              <ul className="space-y-3">
+                {modalContent.additionalDetails && modalContent.additionalDetails.map((detail, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-8 flex justify-end">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default MirissBeach;
+export default MirissaBeach;

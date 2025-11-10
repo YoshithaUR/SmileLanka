@@ -1,0 +1,73 @@
+{
+  "hash": "57b29a2b",
+  "configHash": "1ee19ded",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "6bb54cbf",
+  "optimized": {
+    "aos": {
+      "src": "../../Frontend/node_modules/aos/dist/aos.js",
+      "file": "aos.js",
+      "fileHash": "87fe7ad2",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../Frontend/node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "c1cc072e",
+      "needsInterop": false
+    },
+    "emailjs-com": {
+      "src": "../../Frontend/node_modules/emailjs-com/es/index.js",
+      "file": "emailjs-com.js",
+      "fileHash": "81bbc333",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../Frontend/node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "61d7bc29",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../Frontend/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "0ed2efd4",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../Frontend/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "cb62c036",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../Frontend/node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "6d504102",
+      "needsInterop": false
+    },
+    "react-scroll": {
+      "src": "../../Frontend/node_modules/react-scroll/modules/index.js",
+      "file": "react-scroll.js",
+      "fileHash": "0ea96b3e",
+      "needsInterop": true
+    },
+    "web-vitals": {
+      "src": "../../Frontend/node_modules/web-vitals/dist/web-vitals.js",
+      "file": "web-vitals.js",
+      "fileHash": "74f71185",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-7DTC3TUP": {
+      "file": "chunk-7DTC3TUP.js"
+    },
+    "chunk-V6NWX7Q6": {
+      "file": "chunk-V6NWX7Q6.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}

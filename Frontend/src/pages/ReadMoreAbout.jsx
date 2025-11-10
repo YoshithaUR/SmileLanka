@@ -30,7 +30,7 @@ const ReadMoreAbout = () => {
           Our Story
         </h2>
         <p className="text-gray-300 leading-relaxed text-center max-w-3xl mx-auto mb-8">
-          Born from a love for exploration and a deep connection to the island’s
+          Born from a love for exploration and a deep connection to the island's
           natural beauty, Smile Lanka was founded to showcase the true spirit of
           Sri Lanka. From misty mountain trails to vibrant coastal towns, we craft
           journeys that touch your heart and awaken your adventurous soul.
@@ -45,12 +45,12 @@ const ReadMoreAbout = () => {
             },
             {
               title: "Adventure & Nature",
-              text: "Whether it’s hiking through Ella’s trails or diving in Hikkaduwa, every trip is a new adventure.",
+              text: "Whether it's hiking through Ella's trails or diving in Hikkaduwa, every trip is a new adventure.",
               img: "https://i.pinimg.com/736x/93/ba/50/93ba50c6e8e4606cfd76880e2ae4ef36.jpg",
             },
             {
               title: "Sustainability First",
-              text: "We promote eco-tourism by supporting local communities and protecting the island’s ecosystems.",
+              text: "We promote eco-tourism by supporting local communities and protecting the island's ecosystems.",
               img: "https://i.pinimg.com/1200x/0d/83/4f/0d834ffc5fbf368b4558f3aa4bcf9db5.jpg",
             },
           ].map((card, i) => (
@@ -77,7 +77,7 @@ const ReadMoreAbout = () => {
       {/* Quote Section */}
       <div className="relative bg-yellow-400 py-20 text-center text-black">
         <h2 className="text-3xl font-bold mb-4">
-          “Travel not to escape life, but for life not to escape you.”
+          "Travel not to escape life, but for life not to escape you."
         </h2>
         <p className="text-lg font-medium">— Smile Lanka Team</p>
       </div>

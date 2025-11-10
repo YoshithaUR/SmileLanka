@@ -1,19 +1,50 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// Removed unused import
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  { id: 1, img: "https://i.pinimg.com/1200x/44/c3/c3/44c3c36798711d7f91f1eec2e1d09ba0.jpg" },
-  { id: 2, img: "https://i.pinimg.com/736x/7b/97/1c/7b971c3754a345667c8105e902ef305a.jpg" },
-  { id: 3, img: "https://i.pinimg.com/736x/a5/47/de/a547de5c2c5de7e2e527861d2cf04706.jpg" },
-  { id: 4, img: "https://i.pinimg.com/736x/ff/ed/bd/ffedbd1c6de62f65fcd82bee539aa289.jpg" },
-  { id: 5, img: "https://images.unsplash.com/photo-1596425223826-2ffed1f172df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" },
+  { 
+    id: 1, 
+    img: "https://i.pinimg.com/1200x/44/c3/c3/44c3c36798711d7f91f1eec2e1d09ba0.jpg",
+    title: "Embark On The Journey Of A Lifetime",
+    heading: "TRAVEL FAR, FIND YOURSELF",
+    description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
+  },
+  { 
+    id: 2, 
+    img: "https://i.pinimg.com/736x/7b/97/1c/7b971c3754a345667c8105e902ef305a.jpg",
+    title: "Embark On The Journey Of A Lifetime",
+    heading: "TRAVEL FAR, FIND YOURSELF",
+    description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
+  },
+  { 
+    id: 3, 
+    img: "https://i.pinimg.com/736x/a5/47/de/a547de5c2c5de7e2e527861d2cf04706.jpg",
+    title: "Embark On The Journey Of A Lifetime",
+    heading: "TRAVEL FAR, FIND YOURSELF",
+    description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
+  },
+  { 
+    id: 4, 
+    img: "https://i.pinimg.com/736x/ff/ed/bd/ffedbd1c6de62f65fcd82bee539aa289.jpg",
+    title: "Embark On The Journey Of A Lifetime",
+    heading: "TRAVEL FAR, FIND YOURSELF",
+    description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
+  },
+  { 
+    id: 5, 
+    img: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg",
+    title: "Embark On The Journey Of A Lifetime",
+    heading: "TRAVEL FAR, FIND YOURSELF",
+    description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
+  },
 ];
 
 // Background images that correspond to the carousel images
 const backgroundImages = [
   "https://images.unsplash.com/photo-1598152642931-bf0e8635fdf8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  "https://images.unsplash.com/photo-1473496169904-658604efd0bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+  "https://images.pexels.com/photos/16508231/pexels-photo-16508231.jpeg",
   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   "https://i.pinimg.com/736x/74/f7/5e/74f75eb6e231c942012bbdb6466dc861.jpg",
 ];
@@ -28,10 +59,7 @@ const Hero = () => {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, []);
 
-  const prevSlide = useCallback(() => {
-    setSlideDirection("prev");
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  }, []);
+  // Removed prevSlide function as it's no longer needed
 
   // Auto-move functionality
   useEffect(() => {
@@ -46,21 +74,7 @@ const Hero = () => {
     };
   }, [isAutoPlaying, nextSlide]);
 
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-        nextSlide();
-      } else if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        prevSlide();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [nextSlide, prevSlide]);
+  // Removed keyboard navigation useEffect hook
 
   // Get the two images to display (current and next)
   const getVisibleSlides = () => {
@@ -73,7 +87,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full flex items-center justify-start overflow-hidden"
+      className="relative h-screen w-full flex items-center justify-start overflow-hidden pt-16 md:pt-0"
     >
       {/* Background with smooth transition */}
       <div className="absolute inset-0 w-full h-full transition-opacity duration-1000">
@@ -87,42 +101,36 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-2xl ml-16">
-        <p className="uppercase text-sm tracking-widest text-gray-300">
-          Embark On The Journey Of A Lifetime
+      {/* Content - Moved to slide with the images */}
+      <div className={`relative z-10 max-w-2xl ml-6 md:ml-16 mt-0 md:mt-0 transition-all duration-1000 ease-in-out transform ${
+        slideDirection === "next" ? "animate-fadeSlideInRight" : "animate-fadeSlideInLeft"
+      }`}>
+        <p className="uppercase text-xs md:text-sm tracking-widest text-gray-300 md:pt-0 pt-0">
+          {slides[current].title}
         </p>
-        <h1 className="text-5xl font-bold mt-3 leading-tight">
-          TRAVEL FAR, <br />
-          <span className="text-yellow-400">FIND YOURSELF</span>
+        <h1 className="text-3xl md:text-5xl font-bold mt-1 md:mt-2 leading-tight">
+          {slides[current].heading.split(", ")[0]}, <br />
+          <span className="text-yellow-400">{slides[current].heading.split(", ")[1]}</span>
         </h1>
-        <p className="text-gray-300 mt-4 text-sm">
-          Explore the world's most stunning destinations across mountains,
-          jungles, deserts and oceans. Experience unforgettable adventures and
-          stories to cherish forever.
+        <p className="text-gray-300 mt-2 md:mt-3 text-sm">
+          {slides[current].description}
         </p>
-        <button className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
+        <button className="mt-3 md:mt-4 bg-yellow-400 text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-yellow-500 transition text-sm md:text-base">
           START YOUR ADVENTURE
         </button>
       </div>
 
-      {/* Slider */}
-      <div className="absolute bottom-20 right-10 flex items-center space-x-6">
-        <button
-          onClick={prevSlide}
-          className="p-3 bg-white/20 rounded-full hover:bg-yellow-400 transition-colors duration-300"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        <div className="flex space-x-4">
+      {/* Slider - Hidden on mobile for better mobile experience */}
+      <div className="absolute bottom-20 right-4 md:right-10 flex items-center space-x-4 md:space-x-6 hidden md:flex">
+        {/* Removed arrow keys as requested */}
+        
+        <div className="flex space-x-3 md:space-x-4">
           {visibleSlides.map((slide, index) => (
             <div
               key={slide.id}
               className={`
                 relative overflow-hidden rounded-xl transition-all duration-500 transform-gpu
-                ${index === 0 ? 'w-32 h-64 scale-110 z-10' : 'w-28 h-56 opacity-80'}
+                ${index === 0 ? 'w-24 h-48 md:w-32 md:h-64 scale-110 z-10' : 'w-20 h-40 md:w-28 md:h-56 opacity-80'}
               `}
               style={{
                 transformStyle: 'preserve-3d',
@@ -150,7 +158,7 @@ const Hero = () => {
                   }}
                 />
               )}
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 md:p-3">
                 <span className="text-white text-xs font-semibold">
                   {slide.id}/5
                 </span>
@@ -159,20 +167,14 @@ const Hero = () => {
           ))}
         </div>
 
-        <button
-          onClick={nextSlide}
-          className="p-3 bg-white/20 rounded-full hover:bg-yellow-400 transition-colors duration-300"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        <span className="text-sm ml-2 text-white">
+        {/* Removed arrow keys as requested */}
+        
+        <span className="text-xs md:text-sm ml-1 md:ml-2 text-white">
           {current + 1} / {slides.length}
         </span>
       </div>
     </section>
   );
   };
-export default Hero;
 
+export default Hero;

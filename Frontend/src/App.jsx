@@ -5,7 +5,6 @@ import Hero from "./components/Hero.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import CardsSection from "./components/CardsSection.jsx";
-import DestinationPage from "./pages/destinations/DestinationPage.jsx";
 import Footer from "./components/Footer.jsx";
 import Packages from "./pages/Packages.jsx";
 import Gallery from "./pages/Gallary.jsx";
@@ -13,8 +12,28 @@ import GalleryUpload from "./pages/GallaryUp.jsx";
 import Loader from "./components/Loader.jsx";
 import PackageTemplate from "./pages/packages/PackageTemplate.jsx";
 import ReadMoreAbout from "./pages/ReadMoreAbout.jsx";
+import GalleFort from "./pages/destinations/GalleFort.jsx"; // Added import
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+// Import all destination components
+import SigiriyaRockFortress from "./pages/destinations/SigiriyaRockFortress.jsx";
+import YalaNational from "./pages/destinations/YalaNP.jsx";
+import Unawatuna from "./pages/destinations/UnawatunaBeach.jsx";
+import AdamPeak from "./pages/destinations/AdamPeak.jsx";
+import Anuradhapura from "./pages/destinations/Anuradhapura.jsx";
+import DambullaCaveTemple from "./pages/destinations/DambullaCaveTemple.jsx";
+import EllaRock from "./pages/destinations/EllaRock.jsx";
+import HortonPlains from "./pages/destinations/HortonPlains.jsx";
+import KandyTemple from "./pages/destinations/KandyTemple.jsx";
+import MirissaBeach from "./pages/destinations/MirissaBeach.jsx";
+import NuwaraEliya from "./pages/destinations/NuwaraEliya.jsx";
+// Import service components
+import MountainAdventures from "./pages/services/MountainAdventures.jsx";
+import BeachGetaways from "./pages/services/BeachGetaways.jsx";
+import WildlifeSafaris from "./pages/services/WildlifeSafaris.jsx";
+import CulturalTours from "./pages/services/CulturalTours.jsx";
+import CityExploration from "./pages/services/CityExploration.jsx";
+import WaterSports from "./pages/services/WaterSports.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -46,7 +65,7 @@ const App = () => {
         {!loading && (
           <>
             <Navbar />
-            <main className="flex-grow">
+            <main className="flex-grow pt-16 md:pt-20">
               <Routes>
                 <Route path="/" element={
                   <>
@@ -60,8 +79,32 @@ const App = () => {
                 <Route path="/packages/:id" element={<PackageTemplate />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/gallery-upload" element={<GalleryUpload />} />
-                <Route path="/destinations/:id" element={<DestinationPage />} />
-                <Route path="/about-more" element={<ReadMoreAbout />} />
+                <Route path="/destinations/galle-fort" element={<GalleFort />} />
+                {/* Individual destination routes */}
+                <Route path="/destinations/sigiriya-rock-fortress" element={<SigiriyaRockFortress />} />
+                <Route path="/destinations/yala-national-park" element={<YalaNational />} />
+                <Route path="/destinations/unawatuna-beach" element={<Unawatuna />} />
+                <Route path="/destinations/adams-peak" element={<AdamPeak />} />
+                <Route path="/destinations/anuradhapura" element={<Anuradhapura />} />
+                <Route path="/destinations/dambulla-cave-temple" element={<DambullaCaveTemple />} />
+                <Route path="/destinations/ella-rock" element={<EllaRock />} />
+                <Route path="/destinations/horton-plains" element={<HortonPlains />} />
+                <Route path="/destinations/kandy-temple" element={<KandyTemple />} />
+                <Route path="/destinations/mirissa-beach" element={<MirissaBeach />} />
+                <Route path="/destinations/nuwara-eliya" element={<NuwaraEliya />} />
+                {/* Service routes */}
+                <Route path="/services/mountain-adventures" element={<MountainAdventures />} />
+                <Route path="/services/beach-getaways" element={<BeachGetaways />} />
+                <Route path="/services/wildlife-safaris" element={<WildlifeSafaris />} />
+                <Route path="/services/cultural-tours" element={<CulturalTours />} />
+                <Route path="/services/city-exploration" element={<CityExploration />} />
+                <Route path="/services/water-sports" element={<WaterSports />} />
+                <Route path="/about-more" element={
+                  <>
+                    <Navbar />
+                    <ReadMoreAbout />
+                  </>
+                } />
                 <Route path="*" element={
                   <>
                     <Hero />

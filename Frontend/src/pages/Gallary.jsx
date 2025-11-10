@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./css/gallery.css";
 import axios from "axios";
-
-import sigiriyaVideo from "../assest/sigiriye.mp4";
-import kandyVideo from "../assest/kandy.mp4";
-import nuwaraVideo from "../assest/nu-eliya.mp4";
-import ellaVideo from "../assest/ella.mp4";
-import galleVideo from "../assest/galle.mp4";
+import videos from "../assest/Video/video.js";
 
 const places = [
-  { name: "Kandy", video: kandyVideo },
-  { name: "Sigiriya", video: sigiriyaVideo },
-  { name: "Ella", video: ellaVideo },
-  { name: "Galle", video: galleVideo },
-  { name: "Nuwara Eliya", video: nuwaraVideo },
+  { name: "Kandy", video: videos.kandy },
+  { name: "Sigiriya", video: videos.sigiriye },
+  { name: "Ella", video: videos.ella },
+  { name: "Galle", video: videos.galle },
+  { name: "Nuwara Eliya", video: videos.nuEliya },
 ];
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
   const [uploading, setUploading] = useState(false);
+  const [serverError, setServerError] = useState(false);
 
   // Fetch gallery images from backend
   useEffect(() => {
-    axios.get("http://localhost:5000/gallery").then((res) => setImages(res.data));
+    axios.get("http://localhost:5000/gallery")
+      .then((res) => {
+        setImages(res.data);
+        setServerError(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch images:", err);
+        setServerError(true);
+        // Set some default images or empty array
+        setImages([]);
+      });
   }, []);
 
   // Upload handler
@@ -39,8 +45,10 @@ const Gallery = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setImages((prev) => [res.data.imageUrl, ...prev]);
+      setServerError(false);
     } catch (err) {
       console.error("Upload failed:", err);
+      setServerError(true);
     } finally {
       setUploading(false);
     }
@@ -127,6 +135,12 @@ const Gallery = () => {
               onChange={handleUpload}
             />
           </label>
+
+          {serverError && (
+            <div className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded mb-6">
+              <p>Unable to connect to the server. Please make sure the backend server is running.</p>
+            </div>
+          )}
 
           {images.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">

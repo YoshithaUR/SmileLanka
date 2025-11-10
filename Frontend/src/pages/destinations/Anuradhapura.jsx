@@ -1,71 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
-const Anuradapura= () => {
+const Anuradhapura = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
   
   // Destination details
   const destination = {
-    id: 11,
-   name: "Anuradhapura",
- description:
+    id: 12,
+  name: "Anuradhapura",
+  description:
     "An ancient sacred city renowned for its well-preserved ruins, majestic stupas, and deep spiritual significance in Sri Lankan history.",
   longDescription:
-    "Anuradhapura, one of the oldest continuously inhabited cities in the world, served as the first capital of ancient Sri Lanka for over a millennium. Established in the 4th century BCE, it became the heart of Sri Lankan civilization, religion, and governance. Recognized as a UNESCO World Heritage Site, Anuradhapura is home to magnificent Buddhist monuments, sprawling reservoirs, and intricately carved stone structures. The city’s sacred Bodhi Tree—grown from a branch of the original tree under which Lord Buddha attained enlightenment—remains a revered pilgrimage site for Buddhists worldwide. With its blend of history, spirituality, and archaeological wonder, Anuradhapura offers visitors a profound journey into the island’s glorious past.",
-
-  detailedInfo: [
-    {
-      title: "Sri Maha Bodhi Tree",
-      content:
-        "The Sri Maha Bodhi Tree is the oldest historically documented tree in the world, grown from a sapling of the original Bodhi Tree in Bodh Gaya, India. It was brought to Sri Lanka in the 3rd century BCE by Princess Sangamitta and planted by King Devanampiya Tissa. The tree remains one of the most sacred pilgrimage sites in Buddhism and a symbol of peace and enlightenment.",
-      image:
-        "https://images.unsplash.com/photo-1599641853440-ec88b5d32190?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Ruwanwelisaya Stupa",
-      content:
-        "Built by King Dutugemunu in the 2nd century BCE, Ruwanwelisaya is one of the most venerated stupas in Sri Lanka. Standing at 103 meters, it symbolizes the spiritual and architectural brilliance of the ancient Sinhalese civilization. The stupa enshrines relics of the Buddha and continues to attract thousands of pilgrims each year.",
-      image:
-        "https://images.unsplash.com/photo-1622445274318-6f86a4daef7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Jetavanaramaya and Ancient Monasteries",
-      content:
-        "Jetavanaramaya, once one of the tallest brick structures in the ancient world, stands as a testament to Anuradhapura’s advanced engineering. Surrounding the stupa are vast monastic complexes like Abhayagiri and Thuparamaya, each reflecting the city’s deep devotion to Buddhist scholarship and meditation.",
-      image:
-        "https://images.unsplash.com/photo-1596892172973-11dc1dfaf5c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-  ],
-
-  image:
-    "https://images.unsplash.com/photo-1622445274318-6f86a4daef7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
-  gallery: [
-    "https://images.unsplash.com/photo-1622445274318-6f86a4daef7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1596892172973-11dc1dfaf5c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1599641853440-ec88b5d32190?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1617395818531-4cf0e0c70e70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-  ],
-
-  rating: 4.8,
-  location: "Anuradhapura, North Central Province, Sri Lanka",
-  bestTime: "April to September (dry season, ideal for exploration)",
-  activities: [
-    "Exploring Ancient Ruins",
-    "Visiting Buddhist Temples and Stupas",
-    "Cultural Photography",
-    "Historical Tours",
-    "Pilgrimage Visits",
-  ],
-  facts: [
-    "UNESCO World Heritage Site since 1982",
-    "First capital of ancient Sri Lanka",
-    "Home to the sacred Sri Maha Bodhi Tree",
-    "Contains some of the world’s largest ancient stupas",
-    "Flourished between 4th century BCE and 11th century CE",
-  ],
-}
+    "Anuradhapura, one of the oldest continuously inhabited cities in the world, served as the first capital of ancient Sri Lanka for over a millennium. Established in the 4th century BCE, it became the heart of Sri Lankan civilization, religion, and governance. Recognized as a UNESCO World Heritage Site, Anuradhapura is home to magnificent Buddhist monuments, sprawling reservoirs, and intricately carved stone structures. The city's sacred Bodhi Tree—grown from a branch of the original tree under which Lord Buddha attained enlightenment—remains a revered pilgrimage site for Buddhists worldwide. With its blend of history, spirituality, and archaeological wonder, Anuradhapura offers visitors a profound journey into the island's glorious past.",
+    detailedInfo: [
+      {
+        id: "bodhi",
+        title: "Sri Maha Bodhi Tree",
+        content:
+          "The Sri Maha Bodhi Tree is the oldest historically documented tree in the world, grown from a sapling of the original Bodhi Tree in Bodh Gaya, India. It was brought to Sri Lanka in the 3rd century BCE by Princess Sangamitta and planted by King Devanampiya Tissa. The tree remains one of the most sacred pilgrimage sites in Buddhism and a symbol of peace and enlightenment.",
+        additionalDetails: [
+          "The tree is over 2,300 years old and is considered the oldest living human-planted tree with a recorded date of planting.",
+          "Princess Sangamitta, daughter of Emperor Ashoka, brought the sapling to Sri Lanka and established the first Buddhist monastery for nuns.",
+          "The tree is surrounded by a protective wall and elaborate shrines, with pilgrims circumambulating it daily in a ritual called 'pradakshina.'",
+          "The sacred water from the original Bodhi Tree in India is believed to have been used to irrigate the sapling, adding to its spiritual significance.",
+          "The tree has survived numerous invasions and natural disasters, with several protective structures built around it over the centuries."
+        ],
+        image:
+          "https://i.pinimg.com/736x/19/bc/84/19bc84ad81213d45adcee4afda612689.jpg",
+         
+      },
+      {
+        id: "ruwanwelisaya",
+        title: "Ruwanwelisaya Stupa",
+        content:
+          "Built by King Dutugemunu in the 2nd century BCE, Ruwanwelisaya is one of the most venerated stupas in Sri Lanka. Standing at 103 meters, it symbolizes the spiritual and architectural brilliance of the ancient Sinhalese civilization. The stupa enshrines relics of the Buddha and continues to attract thousands of pilgrims each year.",
+        additionalDetails: [
+          "The stupa was once covered in gold plates and adorned with precious gems, making it one of the most magnificent structures of its time.",
+          "King Dutugemunu considered the construction of Ruwanwelisaya his greatest achievement and is said to have spent his kingdom's entire treasury on it.",
+          "The stupa's design influenced the construction of other stupas throughout Southeast Asia, including those in Myanmar and Thailand.",
+          "The relic chamber contains several important Buddhist artifacts, including a golden casket with Buddha's collarbone relic.",
+          "The surrounding monastery complex includes several meditation halls, libraries, and living quarters for monks that were active for over a millennium."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/84/2a/b9/842ab9710f047097e5c89cc936d60bf5.jpg",
+      },
+      {
+        id: "jetavanaramaya",
+        title: "Jetavanaramaya and Ancient Monasteries",
+        content:
+          "Jetavanaramaya, once one of the tallest brick structures in the ancient world, stands as a testament to Anuradhapura's advanced engineering. Surrounding the stupa are vast monastic complexes like Abhayagiri and Thuparamaya, each reflecting the city's deep devotion to Buddhist scholarship and meditation.",
+        additionalDetails: [
+          "Jetavanaramaya was 122 meters tall when completed, making it the world's tallest stupa and the third tallest structure in the ancient world after the pyramids of Giza.",
+          "The stupa was built using over 93 million baked bricks, with a foundation that extends 8.5 meters deep into the ground.",
+          "Abhayagiri Monastery was one of the largest monastic complexes in the ancient world, housing over 5,000 monks at its peak.",
+          "Thuparamaya, the first stupa built in Sri Lanka, enshrines the collarbone relic of the Buddha and marks the beginning of Buddhism on the island.",
+          "The ancient city's sophisticated water management system included over 50 reservoirs that supported a population of over 100,000 people."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/d7/6a/41/d76a41ffd39fcbcaaa3e12d4a330bc86.jpg",
+      },
+    ],
+    image:
+      "https://i.pinimg.com/1200x/6f/d6/90/6fd69045c6d38acff94a8e92874d8862.jpg",
+       Dimage:
+          "https://i.pinimg.com/1200x/31/d7/c1/31d7c1ab248c72905d3c200e49c028bc.jpg",
+    gallery: [
+      "https://i.pinimg.com/1200x/b4/b2/66/b4b2668489d2d6c72571ee5fa7d07568.jpg",
+      "https://i.pinimg.com/736x/35/df/f8/35dff89f63bb5ffb976154030fe7abb2.jpg",
+      "https://i.pinimg.com/736x/8f/ef/ad/8fefadd0e5043ccbcf61ebbee4637fce.jpg",
+      "https://i.pinimg.com/1200x/35/b1/e4/35b1e4901e0bd77411c16be9cf022baf.jpg",
+    ],
+    rating: 4.8,
+    location: "Anuradhapura, North Central Province, Sri Lanka",
+    bestTime: "April to September (dry season, ideal for exploration)",
+    activities: [
+      "Exploring Ancient Ruins",
+      "Visiting Buddhist Temples and Stupas",
+      "Cultural Photography",
+      "Historical Tours",
+      "Pilgrimage Visits",
+    ],
+    facts: [
+      "UNESCO World Heritage Site since 1982",
+      "First capital of ancient Sri Lanka",
+      "Home to the sacred Sri Maha Bodhi Tree",
+      "Contains some of the world's largest ancient stupas",
+      "Flourished between 4th century BCE and 11th century CE",
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
@@ -82,7 +107,7 @@ const Anuradapura= () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${destination.image}')`
+            backgroundImage: `url('${destination.Dimage}')`
           }}
         />
         <div className="absolute inset-0 bg-black/70"></div>
@@ -185,6 +210,7 @@ const Anuradapura= () => {
             {destination.detailedInfo.map((info, index) => (
               <div 
                 key={index} 
+                id={`section-${info.id}`}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -208,6 +234,10 @@ const Anuradapura= () => {
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
+                    onClick={() => {
+                      setModalContent(info);
+                      setShowModal(true);
+                    }}
                   >
                     Learn More
                   </button>
@@ -335,8 +365,56 @@ const Anuradapura= () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal for additional details */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold text-yellow-500">{modalContent.title}</h3>
+                <button 
+                  className="text-white hover:text-gray-300 text-2xl"
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={modalContent.image} 
+                  alt={modalContent.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+              
+              <p className="text-gray-300 text-lg mb-6">{modalContent.content}</p>
+              
+              <h4 className="text-xl font-bold text-white mb-4">Additional Information:</h4>
+              <ul className="space-y-3">
+                {modalContent.additionalDetails && modalContent.additionalDetails.map((detail, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-8 flex justify-end">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Anuradapura;
+export default Anuradhapura;

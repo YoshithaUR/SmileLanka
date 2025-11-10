@@ -60,7 +60,7 @@ const Loader = ({ isLoading = true }) => {
       </div>
       
       {/* Custom styles for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes spin {
           from {
             transform: rotate(0deg);

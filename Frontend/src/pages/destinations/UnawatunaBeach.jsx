@@ -1,53 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
 const Unawatuna = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
   
   // Destination details
   const destination = {
     id: 10,
   name: "Unawatuna Beach",
   description:
-    "A stunning crescent-shaped beach on Sri Lanka’s southern coast, famous for its golden sands, turquoise waters, and vibrant coastal life.",
+    "A stunning crescent-shaped beach on Sri Lanka's southern coast, famous for its golden sands, turquoise waters, and vibrant coastal life.",
   longDescription:
-    "Unawatuna Beach, located just a few kilometers from the historic city of Galle, is one of Sri Lanka’s most popular and picturesque beaches. Known for its golden sands, calm turquoise waters, and coral reefs teeming with marine life, Unawatuna is a haven for swimming, snorkeling, and relaxation. The beach is lined with palm trees, lively cafes, and boutique hotels, creating a perfect blend of tropical charm and modern comfort. Beyond the beach, visitors can explore nearby attractions such as the Japanese Peace Pagoda, Jungle Beach, and the UNESCO-listed Galle Fort. With its laid-back atmosphere and natural beauty, Unawatuna offers a quintessential Sri Lankan coastal experience ideal for travelers seeking both adventure and tranquility.",
-
+    "Unawatuna Beach, located just a few kilometers from the historic city of Galle, is one of Sri Lanka's most popular and picturesque beaches. Known for its golden sands, calm turquoise waters, and coral reefs teeming with marine life, Unawatuna is a haven for swimming, snorkeling, and relaxation. The beach is lined with palm trees, lively cafes, and boutique hotels, creating a perfect blend of tropical charm and modern comfort. Beyond the beach, visitors can explore nearby attractions such as the Japanese Peace Pagoda, Jungle Beach, and the UNESCO-listed Galle Fort. With its laid-back atmosphere and natural beauty, Unawatuna offers a quintessential Sri Lankan coastal experience ideal for travelers seeking both adventure and tranquility.",
   detailedInfo: [
     {
+      id: "sands",
       title: "Golden Sands and Crystal Waters",
       content:
         "Unawatuna Beach is famous for its wide stretch of golden sand and calm, shallow waters, making it ideal for swimming and sunbathing. The gentle waves and warm ocean create a perfect environment for beach lovers throughout the year.",
+      additionalDetails: [
+        "The beach's distinctive crescent shape provides natural protection from strong ocean currents, making it safer for swimming than many other Sri Lankan beaches.",
+        "The sand is composed of fine golden particles that stay pleasantly warm even during peak daytime hours.",
+        "The water temperature averages between 26-29°C (79-84°F) year-round, making it comfortable for extended swimming sessions.",
+        "The beach is regularly cleaned and maintained by local authorities, ensuring a pleasant environment for visitors.",
+        "During low tide, visitors can walk out to small sandbars that appear just offshore, creating additional space for relaxation."
+      ],
       image:
-        "https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "https://i.pinimg.com/1200x/64/3e/32/643e323649b459f1ae6ac89a4387e244.jpg",
     },
     {
+      id: "marine",
       title: "Marine Life and Coral Reefs",
       content:
         "The clear waters of Unawatuna are home to vibrant coral reefs and colorful tropical fish, making it a great spot for snorkeling and diving. Several diving centers offer guided tours to nearby reef sites and shipwrecks for underwater exploration.",
+      additionalDetails: [
+        "The coral reefs around Unawatuna are part of a larger reef system that extends along the southern coast of Sri Lanka.",
+        "Over 50 species of coral have been identified in the waters around Unawatuna, including both hard and soft coral varieties.",
+        "The area is home to more than 200 species of tropical fish, including angelfish, butterflyfish, and parrotfish.",
+        "Snorkeling is best during the dry season (November to April) when visibility can reach up to 15 meters.",
+        "Several artificial reef structures have been installed to promote coral regeneration and enhance marine biodiversity."
+      ],
       image:
-        "https://images.unsplash.com/photo-1602434962809-91370fbdc877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "https://i.pinimg.com/1200x/29/68/97/296897763105384ba59b0bcd504244a4.jpg",
     },
     {
+      id: "attractions",
       title: "Nearby Attractions and Cultural Sites",
       content:
         "Beyond the beach, visitors can hike to the Japanese Peace Pagoda for panoramic coastal views or explore the historic Galle Fort, a UNESCO World Heritage Site located just 15 minutes away. The area also offers a vibrant nightlife and seaside dining experience.",
+      additionalDetails: [
+        "The Japanese Peace Pagoda, built in the 1970s, stands 33 meters tall and offers 360-degree views of the coastline and surrounding countryside.",
+        "Jungle Beach, accessible via a scenic 15-minute walk through palm forests, offers a more secluded swimming experience.",
+        "Galle Fort, a 17th-century Dutch fortification, houses museums, shops, cafes, and colonial-era buildings within its massive walls.",
+        "The Unawatuna Beach Temple (Goddess of the Sea) is a colorful Hindu shrine located right on the beach, attracting both locals and tourists.",
+        "The nearby Rumassala Hill is believed to be a fragment of Mount Meru from Hindu mythology and offers hiking trails with ocean views."
+      ],
       image:
-        "https://images.unsplash.com/photo-1602161644100-6b8afad26a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "https://i.pinimg.com/736x/3c/b2/73/3cb273c9d24add86fceceb36065a3a63.jpg",
     },
   ],
-
   image:
-    "https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
+    "https://i.pinimg.com/736x/57/57/4f/57574f84979a07a357c296bbcfbdf801.jpg",
+    Dimage:
+    "https://i.pinimg.com/736x/bf/c5/2f/bfc52f73dab71098ced03fee18b01606.jpg",
   gallery: [
-    "https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1602434962809-91370fbdc877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1602161644100-6b8afad26a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1588516903720-8b6d30a0b8d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    "https://i.pinimg.com/736x/06/e2/ea/06e2ea0d45491f11b6c929ec4ba0d6dd.jpg",
+    "https://i.pinimg.com/1200x/91/1c/f1/911cf198c7cc1891636f19528a3d3539.jpg",
+    "https://i.pinimg.com/1200x/fe/3a/f7/fe3af72a742054eabacbc768bd79988f.jpg",
+    "https://i.pinimg.com/1200x/4c/60/42/4c6042606814216450efaf51be7eec98.jpg",
   ],
-
   rating: 4.7,
   location: "Unawatuna, Galle District, Southern Province, Sri Lanka",
   bestTime: "November to April (dry season with calm seas)",
@@ -59,7 +83,7 @@ const Unawatuna = () => {
     "Exploring Galle Fort",
   ],
   facts: [
-    "One of Sri Lanka’s safest beaches for swimming",
+    "One of Sri Lanka's safest beaches for swimming",
     "Famous for coral reefs and tropical fish",
     "Located just 5 km from Galle Fort",
     "Home to Jungle Beach and the Japanese Peace Pagoda",
@@ -82,7 +106,7 @@ const Unawatuna = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${destination.image}')`
+            backgroundImage: `url('${destination.Dimage}')`
           }}
         />
         <div className="absolute inset-0 bg-black/70"></div>
@@ -185,6 +209,7 @@ const Unawatuna = () => {
             {destination.detailedInfo.map((info, index) => (
               <div 
                 key={index} 
+                id={`section-${info.id}`}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -208,6 +233,10 @@ const Unawatuna = () => {
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
+                    onClick={() => {
+                      setModalContent(info);
+                      setShowModal(true);
+                    }}
                   >
                     Learn More
                   </button>
@@ -335,6 +364,54 @@ const Unawatuna = () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal for additional details */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold text-yellow-500">{modalContent.title}</h3>
+                <button 
+                  className="text-white hover:text-gray-300 text-2xl"
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={modalContent.image} 
+                  alt={modalContent.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+              
+              <p className="text-gray-300 text-lg mb-6">{modalContent.content}</p>
+              
+              <h4 className="text-xl font-bold text-white mb-4">Additional Information:</h4>
+              <ul className="space-y-3">
+                {modalContent.additionalDetails && modalContent.additionalDetails.map((detail, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-8 flex justify-end">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

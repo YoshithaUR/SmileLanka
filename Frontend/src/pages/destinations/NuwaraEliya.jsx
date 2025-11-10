@@ -1,103 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
-const NuwaraEliye= () => {
+const NuwaraEliya = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({});
   
   // Destination details
   const destination = {
-    id: 8,
-  
- name: "Nuwara Eliya",
-  description:
-    "A picturesque hill station known as 'Little England', surrounded by tea plantations, waterfalls, and misty mountains.",
-  longDescription:
-    "Nuwara Eliya, often referred to as 'Little England', is a charming hill station located in the Central Highlands of Sri Lanka. Set at an altitude of around 1,868 meters, the town is famous for its cool climate, rolling tea estates, colonial-era architecture, and breathtaking landscapes. Originally developed by the British in the 19th century as a retreat, Nuwara Eliya still retains its old-world charm with red-brick houses, rose gardens, and a scenic golf course. The region is also home to some of the island’s most iconic attractions, including Lake Gregory, Hakgala Botanical Garden, and Horton Plains National Park.",
-
-  detailedInfo: [
-    {
-      title: "Tea Plantations and Scenic Views",
-      content:
-        "Nuwara Eliya is surrounded by lush green tea plantations that produce some of the world’s finest Ceylon tea. Visitors can tour famous tea factories such as Pedro Tea Estate or Blue Field Tea Gardens to learn about tea production and sample freshly brewed varieties while enjoying panoramic mountain views.",
-      image:
-        "https://images.unsplash.com/photo-1615038552657-b29c9bb65115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Colonial Heritage and Architecture",
-      content:
-        "Often called 'Little England', Nuwara Eliya is known for its colonial charm reflected in its Tudor-style houses, red-brick post office, and the Grand Hotel. The town was once a favorite retreat for British planters and governors who built English-style cottages and gardens that still adorn the misty hillsides today.",
-      image:
-        "https://images.unsplash.com/photo-1602233158242-bc9c214e31f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      title: "Nature and Outdoor Adventures",
-      content:
-        "Beyond its serene beauty, Nuwara Eliya offers many outdoor activities including boating on Lake Gregory, exploring Hakgala Botanical Gardens, and hiking at Horton Plains National Park to witness the famous World’s End viewpoint and Baker’s Falls. The cool climate makes it a perfect getaway for nature lovers and adventurers alike.",
-      image:
-        "https://images.unsplash.com/photo-1610563166158-c6bcd7583b1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    },
-  ],
-
-  image:
-    "https://images.unsplash.com/photo-1615038552657-b29c9bb65115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
-  gallery: [
-    "https://images.unsplash.com/photo-1615038552657-b29c9bb65115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1610563166158-c6bcd7583b1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1602233158242-bc9c214e31f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1612444535491-21db6e5f29a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-  ],
-
-  rating: 4.8,
-  location: "Nuwara Eliya, Central Province, Sri Lanka",
-  bestTime: "February to May and August to September",
-  activities: [
-    "Tea Estate Tours",
-    "Boat Riding on Lake Gregory",
-    "Sightseeing and Photography",
-    "Hiking at Horton Plains",
-    "Exploring Botanical Gardens",
-  ],
-  facts: [
-    "Located 1,868 meters above sea level",
-    "Known as 'Little England' for its colonial influence",
-    "Major producer of world-famous Ceylon tea",
-    "Home to Horton Plains and World’s End",
-    "Developed as a British hill station in the 19th century",
-  ],
-
-
-
-  image:
-    "https://images.unsplash.com/photo-1612438211389-cb4d1c1a8a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-
-  gallery: [
-    "https://images.unsplash.com/photo-1612438211389-cb4d1c1a8a2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1625414075000-4161e2bc4a09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1575488652400-bb84c69c3b77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1603969172506-fd357c00d89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-  ],
-
-  rating: 4.9,
-  location: "Kandy, Central Province, Sri Lanka",
-  bestTime: "December to April and July to August (Esala Perahera season)",
-  activities: [
-    "Temple Visit and Worship",
-    "Cultural Exploration",
-    "Attend Esala Perahera Festival",
-    "Photography",
-    "Explore Kandy Lake and nearby attractions",
-  ],
-  facts: [
-    "Houses the sacred tooth relic of Lord Buddha",
-    "Built in the 16th century by King Wimaladharmasuriya I",
-    "Central to the annual Esala Perahera festival",
-    "Symbol of sovereignty in ancient Sri Lanka",
-    "UNESCO World Heritage Site since 1988",
-  ],
-}
-
+    id:8,
+    name: "Nuwara Eliya",
+    description:
+      "A picturesque hill station known as 'Little England', surrounded by tea plantations, waterfalls, and misty mountains.",
+    longDescription:
+      "Nuwara Eliya, often referred to as 'Little England', is a charming hill station located in the Central Highlands of Sri Lanka. Set at an altitude of around 1,868 meters, the town is famous for its cool climate, rolling tea estates, colonial-era architecture, and breathtaking landscapes. Originally developed by the British in the 19th century as a retreat, Nuwara Eliya still retains its old-world charm with red-brick houses, rose gardens, and a scenic golf course. The region is also home to some of the island's most iconic attractions, including Lake Gregory, Hakgala Botanical Garden, and Horton Plains National Park.",
+    detailedInfo: [
+      {
+        id: "tea",
+        title: "Tea Plantations and Scenic Views",
+        content:
+          "Nuwara Eliya is surrounded by lush green tea plantations that produce some of the world's finest Ceylon tea. Visitors can tour famous tea factories such as Pedro Tea Estate or Blue Field Tea Gardens to learn about tea production and sample freshly brewed varieties while enjoying panoramic mountain views.",
+        additionalDetails: [
+          "Nuwara Eliya is home to some of Sri Lanka's most prestigious tea estates, including Pedro, Blue Field, and Mackwoods Labookellie Estate.",
+          "The region produces high-quality black tea known as 'Ceylon tea', which is exported worldwide and considered among the finest teas globally.",
+          "Tea factory tours typically include demonstrations of the tea-making process from withering to rolling, fermenting, and drying.",
+          "The cool climate and specific soil conditions at this elevation create ideal conditions for growing premium tea varieties.",
+          "Many tea estates offer accommodation in plantation bungalows, providing visitors with an authentic experience of colonial-era tea plantation life."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/9a/28/61/9a2861ff188800fbe4f2cf5e912b40b6.jpg",
+      },
+      {
+        id: "colonial",
+        title: "Colonial Heritage and Architecture",
+        content:
+          "Often called 'Little England', Nuwara Eliya is known for its colonial charm reflected in its Tudor-style houses, red-brick post office, and the Grand Hotel. The town was once a favorite retreat for British planters and governors who built English-style cottages and gardens that still adorn the misty hillsides today.",
+        additionalDetails: [
+          "The town's Victorian-era architecture includes the Grand Hotel, Post Office, and numerous Tudor-style bungalows built by British planters.",
+          "The Nuwara Eliya Golf Club, established in 1889, is one of the oldest golf courses in Asia and still hosts international tournaments.",
+          "The Hill Club, originally a British-only club, offers panoramic views of the town and surrounding tea estates from its elevated position.",
+          "Lake Gregory, an artificial lake created in 1873, provides recreational activities and scenic views in the heart of the town.",
+          "The town's climate, with temperatures averaging 15-20°C (59-68°F), reminded British colonists of their homeland, earning it the nickname 'Little England'."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/cd/5f/99/cd5f995ef6259a701b4e6575cf3476a7.jpg",
+      },
+      {
+        id: "nature",
+        title: "Nature and Outdoor Adventures",
+        content:
+          "Beyond its serene beauty, Nuwara Eliya offers many outdoor activities including boating on Lake Gregory, exploring Hakgala Botanical Gardens, and hiking at Horton Plains National Park to witness the famous World's End viewpoint and Baker's Falls. The cool climate makes it a perfect getaway for nature lovers and adventurers alike.",
+        additionalDetails: [
+          "Hakgala Botanical Gardens, established in 1861, is one of the highest botanical gardens in Sri Lanka and features diverse plant collections.",
+          "Horton Plains National Park, a UNESCO World Heritage Site, offers hiking trails leading to World's End cliff and Baker's Falls.",
+          "Lake Gregory provides opportunities for boating, fishing, and scenic walks around its perimeter.",
+          "The region is home to several waterfalls, including Devon Falls and St. Clair's Falls, known as the 'Little Niagara of Sri Lanka'.",
+          "The cool climate supports unique flora and fauna, including several endemic species found only in Sri Lanka's highland regions."
+        ],
+        image:
+          "https://i.pinimg.com/1200x/22/8b/a9/228ba9050e7cb6bb32f98fb6d4bb291d.jpg",
+      },
+    ],
+    image:
+      "https://i.pinimg.com/736x/96/00/92/960092b2d02398d56e7867fb6a0fc218.jpg",
+       Dimage:
+      "https://i.pinimg.com/736x/1e/73/c5/1e73c52f9e5a255b8e7f27b7b7034657.jpg",
+    gallery: [
+      "https://i.pinimg.com/1200x/c4/ac/75/c4ac75d4eb669e16c5de728d53c0b506.jpg",
+      "https://i.pinimg.com/1200x/b2/6d/70/b26d70d115f06f235775e527da43303a.jpg",
+      "https://i.pinimg.com/736x/58/5b/df/585bdfb2de66f206ceb25ed08730b927.jpg",
+      "https://i.pinimg.com/736x/e4/f9/3f/e4f93f30396ae9a248de901a71d1eefd.jpg",
+    ],
+    rating: 4.8,
+    location: "Nuwara Eliya, Central Province, Sri Lanka",
+    bestTime: "February to May and August to September",
+    activities: [
+      "Tea Estate Tours",
+      "Boat Riding on Lake Gregory",
+      "Sightseeing and Photography",
+      "Hiking at Horton Plains",
+      "Exploring Botanical Gardens",
+    ],
+    facts: [
+      "Located 1,868 meters above sea level",
+      "Known as 'Little England' for its colonial influence",
+      "Major producer of world-famous Ceylon tea",
+      "Home to Horton Plains and World's End",
+      "Developed as a British hill station in the 19th century",
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
@@ -114,7 +106,7 @@ const NuwaraEliye= () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${destination.image}')`
+            backgroundImage: `url('${destination.Dimage}')`
           }}
         />
         <div className="absolute inset-0 bg-black/70"></div>
@@ -217,6 +209,7 @@ const NuwaraEliye= () => {
             {destination.detailedInfo.map((info, index) => (
               <div 
                 key={index} 
+                id={`section-${info.id}`}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -240,6 +233,10 @@ const NuwaraEliye= () => {
                     className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
                     data-aos="fade-up"
                     data-aos-delay="300"
+                    onClick={() => {
+                      setModalContent(info);
+                      setShowModal(true);
+                    }}
                   >
                     Learn More
                   </button>
@@ -367,8 +364,56 @@ const NuwaraEliye= () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal for additional details */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold text-yellow-500">{modalContent.title}</h3>
+                <button 
+                  className="text-white hover:text-gray-300 text-2xl"
+                  onClick={() => setShowModal(false)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={modalContent.image} 
+                  alt={modalContent.title}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+              
+              <p className="text-gray-300 text-lg mb-6">{modalContent.content}</p>
+              
+              <h4 className="text-xl font-bold text-white mb-4">Additional Information:</h4>
+              <ul className="space-y-3">
+                {modalContent.additionalDetails && modalContent.additionalDetails.map((detail, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-8 flex justify-end">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default NuwaraEliye;
+export default NuwaraEliya;
