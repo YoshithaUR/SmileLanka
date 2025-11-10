@@ -1,39 +1,38 @@
-import React, { useState, useEffect, useCallback } from "react";
-// Removed unused import
-// import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 
 const slides = [
   { 
     id: 1, 
-    img: "https://i.pinimg.com/1200x/44/c3/c3/44c3c36798711d7f91f1eec2e1d09ba0.jpg",
+    img: "https://i.pinimg.com/1200x/9d/8b/33/9d8b339fff4bb4af87501fb32f8301c9.jpg",
     title: "Embark On The Journey Of A Lifetime",
     heading: "TRAVEL FAR, FIND YOURSELF",
     description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
   },
   { 
     id: 2, 
-    img: "https://i.pinimg.com/736x/7b/97/1c/7b971c3754a345667c8105e902ef305a.jpg",
+    img: "https://i.pinimg.com/1200x/e7/58/78/e75878cb2b6f1e8be38a5fc595de6ab7.jpg",
     title: "Embark On The Journey Of A Lifetime",
     heading: "TRAVEL FAR, FIND YOURSELF",
     description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
   },
   { 
     id: 3, 
-    img: "https://i.pinimg.com/736x/a5/47/de/a547de5c2c5de7e2e527861d2cf04706.jpg",
+    img: "https://i.pinimg.com/1200x/34/b9/e3/34b9e3c9651264e2a895b45748f8fb20.jpg",
     title: "Embark On The Journey Of A Lifetime",
     heading: "TRAVEL FAR, FIND YOURSELF",
     description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
   },
+
   { 
     id: 4, 
-    img: "https://i.pinimg.com/736x/ff/ed/bd/ffedbd1c6de62f65fcd82bee539aa289.jpg",
+    img: "https://i.pinimg.com/736x/77/a9/3c/77a93c757d3cef7edb8b0a5ca13763ac.jpg",
     title: "Embark On The Journey Of A Lifetime",
     heading: "TRAVEL FAR, FIND YOURSELF",
     description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
   },
   { 
     id: 5, 
-    img: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg",
+    img: "https://i.pinimg.com/736x/89/2e/aa/892eaad87e548ec356824f15343ae025.jpg",
     title: "Embark On The Journey Of A Lifetime",
     heading: "TRAVEL FAR, FIND YOURSELF",
     description: "Explore the world's most stunning destinations across mountains, jungles, deserts and oceans. Experience unforgettable adventures and stories to cherish forever."
@@ -53,14 +52,14 @@ const backgroundImages = [
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [slideDirection, setSlideDirection] = useState("next"); // Track slide direction for animation
+  const [slideDirection, setSlideDirection] = useState("next");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef(null);
 
   const nextSlide = useCallback(() => {
     setSlideDirection("next");
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, []);
-
-  // Removed prevSlide function as it's no longer needed
 
   // Auto-move functionality
   useEffect(() => {
@@ -68,14 +67,27 @@ const Hero = () => {
     if (isAutoPlaying) {
       interval = setInterval(() => {
         nextSlide();
-      }, 3000); // Change slide every 3 seconds
+      }, 5000); // Change slide every 5 seconds
     }
     return () => {
       if (interval) clearInterval(interval);
     };
   }, [isAutoPlaying, nextSlide]);
 
-  // Removed keyboard navigation useEffect hook
+  // Mouse move effect for parallax
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        setMousePosition({ x, y });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   // Get the two images to display (current and next)
   const getVisibleSlides = () => {
@@ -88,74 +100,116 @@ const Hero = () => {
   return (
     <section
       id="home"
+      ref={heroRef}
       className="relative h-screen w-full flex items-center justify-start overflow-hidden pt-16 md:pt-0"
     >
-      {/* Background with smooth transition */}
-      <div className="absolute inset-0 w-full h-full transition-opacity duration-1000">
+      {/* Animated background particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-yellow-400/30 animate-float"
+            style={{
+              width: `${Math.random() * 8 + 2}px`,
+              height: `${Math.random() * 8 + 2}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${Math.random() * 10 + 10}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Background with Ken Burns effect */}
+      <div className="absolute inset-0 w-full h-full">
         <img
           src={backgroundImages[current]}
           alt="hero bg"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-kenBurns"
         />
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Overlay with dynamic gradient */}
+      <div 
+        className="absolute inset-0 transition-all duration-1000 ease-in-out"
+        style={{
+          background: `radial-gradient(circle at ${50 + mousePosition.x * 10}% ${50 + mousePosition.y * 10}%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 70%)`,
+        }}
+      ></div>
 
-      {/* Content - Moved to slide with the images */}
+      {/* Content with advanced animations */}
       <div className={`relative z-10 max-w-2xl ml-6 md:ml-16 mt-0 md:mt-0 transition-all duration-1000 ease-in-out transform ${
         slideDirection === "next" ? "animate-fadeSlideInRight" : "animate-fadeSlideInLeft"
       }`}>
-        <p className="uppercase text-xs md:text-sm tracking-widest text-gray-300 md:pt-0 pt-0">
+        <p 
+          className="uppercase text-xs md:text-sm tracking-widest text-gray-300 md:pt-0 pt-0 opacity-0 animate-fadeInUp"
+          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+        >
           {slides[current].title}
         </p>
-        <h1 className="text-3xl md:text-5xl font-bold mt-1 md:mt-2 leading-tight">
+        <h1 
+          className="text-3xl md:text-5xl font-bold mt-1 md:mt-2 leading-tight opacity-0 animate-fadeInUp"
+          style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+        >
           {slides[current].heading.split(", ")[0]}, <br />
-          <span className="text-yellow-400">{slides[current].heading.split(", ")[1]}</span>
+          <span 
+            className="text-yellow-400 inline-block opacity-0 animate-fadeInUp"
+            style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
+          >
+            {slides[current].heading.split(", ")[1]}
+          </span>
         </h1>
-        <p className="text-gray-300 mt-2 md:mt-3 text-sm">
+        <p 
+          className="text-gray-300 mt-2 md:mt-3 text-sm opacity-0 animate-fadeInUp"
+          style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
+        >
           {slides[current].description}
         </p>
-        <button className="mt-3 md:mt-4 bg-yellow-400 text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-yellow-500 transition text-sm md:text-base">
+        <button 
+          className="mt-3 md:mt-4 bg-yellow-400 text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-yellow-500 transition text-sm md:text-base opacity-0 animate-fadeInUp transform hover:scale-105 transition-all duration-300 animate-pulseGlow"
+          style={{ animationDelay: '1s', animationFillMode: 'forwards' }}
+        >
           START YOUR ADVENTURE
         </button>
       </div>
 
-      {/* Slider - Hidden on mobile for better mobile experience */}
+      {/* Slider with enhanced 3D effect and perfect arrangement */}
       <div className="absolute bottom-20 right-4 md:right-10 flex items-center space-x-4 md:space-x-6 hidden md:flex">
-        {/* Removed arrow keys as requested */}
-        
         <div className="flex space-x-3 md:space-x-4">
           {visibleSlides.map((slide, index) => (
             <div
               key={slide.id}
               className={`
-                relative overflow-hidden rounded-xl transition-all duration-500 transform-gpu
+                relative overflow-hidden rounded-xl transition-all duration-700 transform-gpu
                 ${index === 0 ? 'w-24 h-48 md:w-32 md:h-64 scale-110 z-10' : 'w-20 h-40 md:w-28 md:h-56 opacity-80'}
+                ${index === 0 ? 'animate-tiltRotate' : ''}
               `}
               style={{
                 transformStyle: 'preserve-3d',
-                transform: index === 0 ? 'rotateY(0deg) scale(1.1)' : 'rotateY(10deg) scale(0.9)',
+                transform: index === 0 
+                  ? `rotateY(${mousePosition.x * 3}deg) rotateX(${mousePosition.y * -3}deg) scale(1.1)` 
+                  : `rotateY(10deg) scale(0.9)`,
                 boxShadow: index === 0
                   ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                   : '0 10px 20px -5px rgba(0, 0, 0, 0.3)',
-                transition: 'all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)'
+                transition: 'all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1)'
               }}
             >
               <img
                 src={slide.img}
                 alt={`Slide ${slide.id}`}
-                className="w-full h-full object-cover transition-transform duration-500"
+                className="w-full h-full object-cover transition-transform duration-700 animate-zoomIn"
                 style={{
-                  transform: index === 0 ? 'scale(1.05)' : 'scale(1)',
+                  animationDelay: index === 0 ? '0s' : '0.2s',
+                  animationFillMode: 'forwards'
                 }}
               />
               {index === 0 && (
                 <div
-                  className="absolute inset-0 border-2 border-yellow-400 rounded-xl pointer-events-none"
+                  className="absolute inset-0 border-2 border-yellow-400 rounded-xl pointer-events-none animate-pulseGlow"
                   style={{
                     transform: 'translateZ(20px)',
-                    boxShadow: '0 0 20px rgba(255, 217, 0, 0.5)',
                   }}
                 />
               )}
@@ -167,8 +221,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-
-        {/* Removed arrow keys as requested */}
         
         <span className="text-xs md:text-sm ml-1 md:ml-2 text-white">
           {current + 1} / {slides.length}
@@ -176,6 +228,6 @@ const Hero = () => {
       </div>
     </section>
   );
-  };
+};
 
 export default Hero;

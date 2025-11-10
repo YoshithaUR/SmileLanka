@@ -340,7 +340,7 @@ const About = () => {
         className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://i.pinimg.com/1200x/3a/fc/53/3afc530282fa8b67519a15fdbd539238.jpg')",
+            "url('https://images.pexels.com/photos/12832815/pexels-photo-12832815.jpeg')",
         }}
         data-aos="fade-in"
       >

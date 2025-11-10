@@ -123,7 +123,7 @@ const PackageTemplate = () => {
         "Professional tour guide",
         "Private transportation"
       ],
-      color: "yellow"
+      color: "safari-brown"
     },
     "premium-luxury": {
       id: 3,
@@ -245,7 +245,7 @@ const PackageTemplate = () => {
         "Historical site visits",
         "Spiritual journey opportunities"
       ],
-      color: "orange"
+      color: "yellow"
     },
     "beach-paradise": {
       id: 5,
@@ -382,7 +382,15 @@ const PackageTemplate = () => {
   // Determine color classes based on package
   const getColorClasses = (type) => {
     switch (packageData.color) {
-      case 'orange':
+      case 'safari-brown':
+        return type === 'rating' ? 'bg-yellow-500/20 text-yellow-500' :
+               type === 'price' ? 'bg-yellow-500/20 text-yellow-500' :
+               type === 'heading' ? 'text-yellow-500' :
+               type === 'fact' ? 'bg-yellow-500 rounded-full' :
+               type === 'cta' ? 'from-yellow-600 to-yellow-800' :
+               type === 'button' ? 'bg-yellow-500 hover:bg-yellow-600 text-gray-900' :
+               'bg-gray-800/50';
+               case 'yellow':
         return type === 'rating' ? 'bg-yellow-500/20 text-yellow-500' :
                type === 'price' ? 'bg-yellow-500/20 text-yellow-500' :
                type === 'heading' ? 'text-yellow-500' :

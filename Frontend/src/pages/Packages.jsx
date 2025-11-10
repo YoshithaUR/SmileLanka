@@ -39,7 +39,7 @@ const Packages = () => {
         "Professional tour guide",
         "Airport transfers",
       ],
-      color: "yellow",
+      color: "safari-brown",
       link: "golden-experience",
     },
     {
@@ -81,7 +81,7 @@ const Packages = () => {
         "Historical site tours",
         "Local artisan workshops",
       ],
-      color: "orange",
+      color: "yellow",
       link: "cultural-heritage",
     },
     {
@@ -186,9 +186,9 @@ const Packages = () => {
           ? "border-green-500 shadow-green-500/20 hover:border-green-400"
           : pkg.color === "teal"
           ? "border-teal-500 shadow-teal-500/20 hover:border-teal-400"
-          : pkg.color === "orange"
-          ? "border-orange-500 shadow-orange-500/20 hover:border-orange-400"
-          : "border-gray-700 hover:border-gray-600"
+          : pkg.color === "safari-brown"
+  ? "border-[#8B5E3C] shadow-[#8B5E3C]/20 hover:border-[#A46A42]"
+  : "border-gray-700 hover:border-gray-600"
       } transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
       data-aos="fade-up"
       data-aos-delay={index * 100}
@@ -223,9 +223,9 @@ const Packages = () => {
                     ? "text-green-500"
                     : pkg.color === "teal"
                     ? "text-teal-500"
-                    : pkg.color === "orange"
-                    ? "text-orange-500"
-                    : "text-gray-500"
+                    : pkg.color === "safari-brown"
+  ? "text-[#8B5E3C]"
+  : "text-gray-500"
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -249,9 +249,9 @@ const Packages = () => {
               ? "bg-green-500 text-white hover:bg-green-600 hover:shadow-lg"
               : pkg.color === "teal"
               ? "bg-teal-500 text-white hover:bg-teal-600 hover:shadow-lg"
-              : pkg.color === "orange"
-              ? "bg-orange-500 text-white hover:bg-orange-600 hover:shadow-lg"
-              : "bg-gray-700 text-white hover:bg-gray-600 hover:shadow-lg"
+              : pkg.color === "safari-brown"
+  ? "bg-[#8B5E3C] text-white hover:bg-[#A46A42] hover:shadow-lg"
+  : "bg-gray-700 text-white hover:bg-gray-600 hover:shadow-lg"
           } transform hover:-translate-y-1`}
         >
           View Details
