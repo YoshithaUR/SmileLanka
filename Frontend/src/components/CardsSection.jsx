@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// Removed unused import
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const CardsSection = () => {
   const cards = [
@@ -51,33 +52,9 @@ const CardsSection = () => {
     };
   }, []);
 
-  const nextCard = () => {
-    setDirection("next");
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-  };
+  // Removed nextCard and prevCard functions as we're removing navigation arrows
 
-  const prevCard = () => {
-    setDirection("prev");
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
-  };
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        nextCard();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        prevCard();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
+  // Removed keyboard navigation useEffect hook
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
@@ -160,45 +137,7 @@ const CardsSection = () => {
           )}
         </div>
         
-        {/* Navigation Arrows - Show below cards on mobile */}
-        {isMobile && (
-          <div className="flex justify-center mt-8 space-x-6">
-            <button
-              onClick={prevCard}
-              className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-              aria-label="Previous card"
-            >
-              <ChevronLeft size={28} />
-            </button>
-            <button
-              onClick={nextCard}
-              className="bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-              aria-label="Next card"
-            >
-              <ChevronRight size={28} />
-            </button>
-          </div>
-        )}
-        
-        {/* Navigation Arrows - Show on sides for desktop */}
-        {!isMobile && (
-          <>
-            <button
-              onClick={prevCard}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-              aria-label="Previous card"
-            >
-              <ChevronLeft size={28} />
-            </button>
-            <button
-              onClick={nextCard}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-              aria-label="Next card"
-            >
-              <ChevronRight size={28} />
-            </button>
-          </>
-        )}
+        {/* Removed Navigation Arrows for both mobile and desktop views */}
       </div>
     </section>
   );
