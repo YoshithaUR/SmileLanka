@@ -18,27 +18,27 @@ const WildlifeSafaris = () => {
         id: "jeep",
         title: "Jeep Safaris",
         content: "Explore national parks in open 4x4 jeeps with expert guides who know the best spots for wildlife sightings and photography opportunities.",
-        image: "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg"
+        image: "https://i.pinimg.com/736x/18/08/c9/1808c9dfb6aed6f90dd996a3d0e39ebb.jpg"
       },
       {
         id: "boat",
         title: "Boat Safaris",
         content: "Glide through wetlands and waterways on boat safaris to observe aquatic birds, crocodiles, and elephants bathing in their natural habitat.",
-        image: "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg"
+        image: "https://i.pinimg.com/1200x/97/45/49/9745490fa6fc02ac8a559ca9bd523598.jpg"
       },
       {
         id: "night",
         title: "Night Safaris",
         content: "Experience the nocturnal world of Sri Lankan wildlife with specialized night safaris using spotlights and expert guides.",
-        image: "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg"
+        image: "https://i.pinimg.com/1200x/d5/09/0e/d5090e2dd42f913a13d891bcdc6ee1e7.jpg"
       }
     ],
-    image: "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg",
+    image: "https://i.pinimg.com/736x/66/6f/ff/666fff34eeb44827245af4b2843d18e1.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg",
-      "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg",
-      "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg",
-      "https://i.pinimg.com/736x/d0/fa/41/d0fa4158120c4e14449df5fadb529e2e.jpg"
+      "https://i.pinimg.com/1200x/e9/81/8a/e9818a9b52e4bd5e0162a55c008edb28.jpg",
+      "https://i.pinimg.com/1200x/19/56/39/19563987b0c378ab67ecb2ef63d26a11.jpg",
+      "https://i.pinimg.com/736x/e3/2b/5e/e32b5e8f4cad7f920686bf193167222f.jpg",
+      "https://i.pinimg.com/736x/d0/c3/c1/d0c3c130a38be7d1cdc20c7b17b13a84.jpg"
     ],
     rating: 4.9,
     bestTime: "February to October",
@@ -47,8 +47,6 @@ const WildlifeSafaris = () => {
     price: "Starting from $180 per person",
     activities: [
       "Jeep Safaris",
-      "Boat Safaris",
-      "Night Safaris",
       "Bird Watching",
       "Photography Tours"
     ],

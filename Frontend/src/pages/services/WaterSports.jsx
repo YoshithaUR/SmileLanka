@@ -18,27 +18,27 @@ const WaterSports = () => {
         id: "surfing",
         title: "Surfing Adventures",
         content: "Learn to surf or improve your skills with professional instructors at some of the best surf spots in the Indian Ocean.",
-        image: "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg"
+        image: "https://i.pinimg.com/736x/9d/32/99/9d3299e689752314a06612339e2b924e.jpg"
       },
       {
         id: "diving",
         title: "Diving & Snorkeling",
         content: "Explore vibrant coral reefs and encounter diverse marine life with certified diving instructors and guided snorkeling tours.",
-        image: "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg"
+        image: "https://i.pinimg.com/1200x/00/4e/66/004e6610b7b3a846da70292ce323d08e.jpg"
       },
       {
         id: "fishing",
         title: "Fishing Expeditions",
         content: "Join experienced local fishermen for traditional or deep-sea fishing adventures in productive coastal waters.",
-        image: "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg"
+        image: "https://i.pinimg.com/1200x/45/f7/62/45f762b9a8a612c9094b225e0ecb5037.jpg"
       }
     ],
-    image: "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg",
+    image: "https://i.pinimg.com/1200x/d0/a3/2a/d0a32a2c0e15c8b244576887172948a1.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg",
-      "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg",
-      "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg",
-      "https://i.pinimg.com/736x/38/15/76/38157665dafc06ff8b479c6214645063.jpg"
+      "https://i.pinimg.com/736x/fc/2c/6f/fc2c6fe504033ff0dd3025cf18b94424.jpg",
+      "https://i.pinimg.com/736x/07/14/17/0714178da1f93ddff9f0da639f159798.jpg",
+      "https://i.pinimg.com/736x/3e/e5/40/3ee540cce75ef1c8a5ba45ab07006888.jpg",
+      "https://i.pinimg.com/1200x/c8/fb/6c/c8fb6c2dc07ea4316830c84059727b6a.jpg"
     ],
     rating: 4.8,
     bestTime: "November to April",

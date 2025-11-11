@@ -12,33 +12,33 @@ const CityExploration = () => {
     id: 5,
     name: "City Exploration",
     description: "Discover the vibrant urban life, architecture, and nightlife of Sri Lanka's major cities.",
-    longDescription: "Experience the dynamic energy of Sri Lanka's bustling cities with our guided urban exploration tours. From the colonial charm of Colombo's historic fort to the hill country's tranquil Kandy, our city tours showcase the perfect blend of traditional culture and modern development. Explore vibrant street art scenes, bustling local markets, architectural marvels, and thriving food cultures with our expert local guides. Whether you're interested in shopping for unique souvenirs, tasting street food delicacies, or discovering hidden cultural gems, our city exploration packages offer authentic experiences that go beyond typical tourist attractions. Each tour is customizable to match your interests, whether you prefer historical landmarks, contemporary art scenes, or culinary adventures.",
+    longDescription: "Experience the dynamic energy of Sri Lanka's bustling cities with our guided urban exploration tours. From the colonial charm of Colombo's historic fort to the hill country's tranquil Kandy, our city tours showcase the perfect blend of traditional culture and modern development. Explore vibrant street art scenes, bustling local markets, architectural marvels, and thriving food cultures with our expert local guides. Whether you're interested in shopping for unique souvenirs, tasting street food delicacies, or discovering hidden cultural gems, our city exploration packages offer authentic experiences that go beyond typical tourist attractions. Each tour is customizable to match your interests, whether you prefer historical landmarks, or culinary adventures.",
     detailedInfo: [
       {
         id: "sightseeing",
         title: "City Sightseeing",
         content: "Comprehensive tours of major landmarks, historical sites, and modern architectural marvels with expert local guides.",
-        image: "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg"
+        image: "https://i.pinimg.com/1200x/e5/29/b5/e529b5484b45f6fc78867971e01b3d4e.jpg"
       },
       {
         id: "food",
         title: "Food Tours",
         content: "Culinary adventures through local markets, street food scenes, and renowned restaurants to taste authentic Sri Lankan flavors.",
-        image: "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg"
+        image: "https://i.pinimg.com/1200x/e2/0b/e1/e20be170cfb1053a0c60f5182452ca89.jpg"
       },
       {
         id: "shopping",
         title: "Shopping Experiences",
         content: "Guided shopping tours to discover local crafts, textiles, spices, and unique souvenirs in authentic markets and boutiques.",
-        image: "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg"
+        image: "https://i.pinimg.com/1200x/3b/ee/95/3bee95414eca1f0c4ae3ebefed2bcd79.jpg"
       }
     ],
-    image: "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg",
+    image: "https://i.pinimg.com/736x/bb/2e/6f/bb2e6fe0d5d2489734c681faa4079979.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg",
-      "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg",
-      "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg",
-      "https://i.pinimg.com/736x/59/f7/ce/59f7ce96297ceb4903fbc6535557c6c4.jpg"
+      "https://i.pinimg.com/1200x/37/99/7e/37997eb8787ed139959c9ba80ccfdf20.jpg",
+      "https://i.pinimg.com/736x/82/20/2b/82202b68c5c3fcf26a1e51cfe59a8bd2.jpg",
+      "https://i.pinimg.com/1200x/5a/86/ac/5a86ac27e9b6bbdece232f895064beed.jpg",
+      "https://i.pinimg.com/736x/d8/98/59/d89859b55e7cf031f15d02ec6a3f88fb.jpg"
     ],
     rating: 4.7,
     bestTime: "December to March",
@@ -46,9 +46,7 @@ const CityExploration = () => {
     difficulty: "Beginner Friendly",
     price: "Starting from $130 per person",
     activities: [
-      "City Sightseeing",
       "Food Tours",
-      "Shopping Experiences",
       "Nightlife Exploration",
       "Art & Culture Tours"
     ],

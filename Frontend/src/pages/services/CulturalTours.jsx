@@ -18,27 +18,27 @@ const CulturalTours = () => {
         id: "temples",
         title: "Temple Visits",
         content: "Explore ancient Buddhist temples and Hindu shrines with expert guides who explain the religious significance and architectural features.",
-        image: "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg"
+        image: "https://i.pinimg.com/1200x/d0/4e/03/d04e03e02e64b5f0297ed0c3e476e892.jpg"
       },
       {
         id: "heritage",
         title: "Heritage Sites",
         content: "Visit UNESCO World Heritage sites including ancient cities, royal palaces, and historical monuments with detailed historical context.",
-        image: "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg"
+        image: "https://i.pinimg.com/736x/d8/2c/a4/d82ca4a76a9775793c4d1fd4d24ff6e4.jpg"
       },
       {
         id: "workshops",
         title: "Cultural Workshops",
         content: "Participate in hands-on workshops to learn traditional crafts, cooking techniques, and cultural practices from local artisans.",
-        image: "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg"
+        image: "https://i.pinimg.com/736x/74/e4/04/74e404d3f568f4a9faebe77e9d7c748c.jpg"
       }
     ],
-    image: "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg",
+    image: "https://i.pinimg.com/736x/d4/0e/1d/d40e1dab9afb67a25e9aa552f7fa2820.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg",
-      "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg",
-      "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg",
-      "https://i.pinimg.com/736x/7e/ab/41/7eab410bfce7c84db8dae4418a4806d7.jpg"
+      "https://i.pinimg.com/1200x/bd/72/e1/bd72e14fd0681365c2a18c22832ce138.jpg",
+      "https://i.pinimg.com/736x/7a/e7/f8/7ae7f835ac1ddf2ef81b012b84431ce8.jpg",
+      "https://i.pinimg.com/1200x/89/6f/1e/896f1e0efc012434fc78234bc91a1bac.jpg",
+      "https://i.pinimg.com/1200x/8d/8c/b9/8d8cb91ef96444394cf2366850469d4b.jpg"
     ],
     rating: 4.8,
     bestTime: "December to April",
@@ -46,8 +46,7 @@ const CulturalTours = () => {
     difficulty: "Beginner Friendly",
     price: "Starting from $140 per person",
     activities: [
-      "Temple Visits",
-      "Heritage Sites",
+  
       "Cultural Workshops",
       "Traditional Cooking",
       "Local Market Tours"

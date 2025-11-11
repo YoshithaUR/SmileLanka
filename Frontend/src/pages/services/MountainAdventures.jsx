@@ -18,21 +18,21 @@ const MountainAdventures = () => {
         id: "hiking",
         title: "Guided Hiking Tours",
         content: "Our professional guides lead hikes through diverse terrains, from gentle forest walks to challenging peak ascents. Each tour includes safety equipment, local insights, and breathtaking photo opportunities.",
-        image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
+        image: "https://i.pinimg.com/736x/6b/d4/e3/6bd4e31d82e92dce4cd15adc3e3f4efa.jpg"
       },
     
       {
         id: "camping",
         title: "Mountain Camping",
         content: "Experience the mountains under the stars with our overnight camping adventures. We provide all necessary equipment and meals for a comfortable outdoor experience.",
-        image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
+        image: "https://i.pinimg.com/1200x/66/a8/ec/66a8ec9808ba85b2c19491161ef40c1e.jpg"
       }
     ],
-    image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg",
+    image: "https://i.pinimg.com/1200x/bb/b4/8c/bbb48c6bb189c1c473e13f756de1fbfb.jpg",
     gallery: [
       "https://i.pinimg.com/736x/4e/b7/c2/4eb7c2fa7cd8817226a4783e115b48d4.jpg",
       "https://i.pinimg.com/736x/b3/2e/eb/b32eebd3ccc5c23598fb29235c430f5d.jpg",
-      "https://i.pinimg.com/736x/67/ab/d6/67abd6d4f923e75c8fd846843508dd51.jpg",
+      "https://i.pinimg.com/1200x/d4/78/49/d4784925888fa810d0fdfec901a62c00.jpg",
       "https://i.pinimg.com/736x/a4/1a/81/a41a812d382a79916296a8528d6300ba.jpg"
     ],
     rating: 4.9,

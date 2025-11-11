@@ -18,27 +18,27 @@ const BeachGetaways = () => {
         id: "surfing",
         title: "Surfing Lessons",
         content: "Learn to surf with our professional instructors on some of the best waves in the Indian Ocean. Suitable for beginners to advanced surfers.",
-        image: "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg"
+        image: "https://i.pinimg.com/1200x/ff/4c/5d/ff4c5d6a6abc42367d5bf97b133241bf.jpg"
       },
       {
         id: "snorkeling",
         title: "Snorkeling Adventures",
         content: "Discover vibrant coral reefs and colorful marine life in crystal clear waters with our guided snorkeling tours.",
-        image: "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg"
+        image: "https://i.pinimg.com/1200x/86/0c/cf/860ccf18032410ce75cd07f730d67a21.jpg"
       },
       {
         id: "whale",
         title: "Whale Watching",
         content: "Embark on thrilling whale watching expeditions to witness majestic blue whales and dolphins in their natural habitat.",
-        image: "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg"
+        image: "https://i.pinimg.com/736x/bd/76/7f/bd767fb6fe4f2e61254d62d010aca56b.jpg"
       }
     ],
-    image: "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg",
+    image: "https://i.pinimg.com/1200x/c3/75/6e/c3756e64caf1da3fc80f6f8e0367d492.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg",
-      "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg",
-      "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg",
-      "https://i.pinimg.com/736x/bd/11/a4/bd11a4f393343bcb5437c7d441794b50.jpg"
+      "https://i.pinimg.com/1200x/26/85/c8/2685c8a47926e31d22e671f370265411.jpg",
+      "https://i.pinimg.com/1200x/2a/9b/09/2a9b09ea6d91f4529e0de880272c5aa7.jpg",
+      "https://i.pinimg.com/1200x/f9/75/c9/f975c9a6382dd1bb84054de6e296a2db.jpg",
+      "https://i.pinimg.com/736x/68/f5/7a/68f57ae4158f5cdffc5da62701b2a403.jpg"
     ],
     rating: 4.8,
     bestTime: "November to April",
@@ -47,10 +47,9 @@ const BeachGetaways = () => {
     price: "Starting from $150 per person",
     activities: [
       "Surfing Lessons",
-      "Snorkeling Adventures",
       "Whale Watching",
       "Beach Volleyball",
-      "Sunset Cruises"
+   
     ],
     itinerary: [
       {
