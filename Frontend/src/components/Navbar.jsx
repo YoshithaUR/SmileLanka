@@ -10,7 +10,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useRouterLocation();
   const navigate = useRouterNavigate();
-  const navItems = ["home", "about", "destinations", "contact", "gallery"];
+  const navItems = ["home", "about", "destinations", "contact", "gallery",];
   const linkRefs = useRef([]);
 
   useEffect(() => {
@@ -69,17 +69,17 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300 font-medium">
-        <RouterLink to="/" className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
+        <RouterLink to="/"  className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
           Home
         </RouterLink>
       </li>
       <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300 font-medium">
-        <ScrollLink to="about" smooth={true} duration={600} offset={-70} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
+        <ScrollLink to="about" smooth={true} duration={600} offset={-100} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
           About Us
         </ScrollLink>
       </li>
       <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300 font-medium">
-        <ScrollLink to="destination" smooth={true} duration={600} offset={-70} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
+        <ScrollLink to="destination" smooth={true} duration={600} offset={-100} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
           Destinations
         </ScrollLink>
       </li>
@@ -95,7 +95,7 @@ const Navbar = () => {
         </RouterLink>
       </li>
       <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300 font-medium">
-        <ScrollLink to="contact" smooth={true} duration={600} offset={-70} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
+        <ScrollLink to="contact" smooth={true} duration={600} offset={-100} className="block h-full w-full py-3 px-4 rounded-xl hover:bg-gray-700/50 transition-all" onClick={() => setMobileMenuOpen(false)}>
           Contact Us
         </ScrollLink>
       </li>

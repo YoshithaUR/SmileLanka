@@ -13,6 +13,7 @@ import Loader from "./components/Loader.jsx";
 import PackageTemplate from "./pages/packages/PackageTemplate.jsx";
 import ReadMoreAbout from "./pages/ReadMoreAbout.jsx";
 import GalleFort from "./pages/destinations/GalleFort.jsx"; // Added import
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Import all destination components
@@ -65,6 +66,7 @@ const App = () => {
         {!loading && (
           <>
             <Navbar />
+            <ScrollToTop />
             <main className="flex-grow pt-16 md:pt-20">
               <Routes>
                 <Route path="/" element={

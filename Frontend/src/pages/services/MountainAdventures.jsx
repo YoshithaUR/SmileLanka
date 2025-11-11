@@ -20,12 +20,7 @@ const MountainAdventures = () => {
         content: "Our professional guides lead hikes through diverse terrains, from gentle forest walks to challenging peak ascents. Each tour includes safety equipment, local insights, and breathtaking photo opportunities.",
         image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
       },
-      {
-        id: "peak",
-        title: "Peak Climbing",
-        content: "Challenge yourself with our specialized peak climbing expeditions. Our expert mountaineers provide technical support and safety equipment for conquering Sri Lanka's most iconic summits.",
-        image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
-      },
+    
       {
         id: "camping",
         title: "Mountain Camping",
@@ -35,10 +30,10 @@ const MountainAdventures = () => {
     ],
     image: "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg",
     gallery: [
-      "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg",
-      "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg",
-      "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg",
-      "https://i.pinimg.com/1200x/1d/91/e9/1d91e9c02b5e42104b599b0792f4a3e2.jpg"
+      "https://i.pinimg.com/736x/4e/b7/c2/4eb7c2fa7cd8817226a4783e115b48d4.jpg",
+      "https://i.pinimg.com/736x/b3/2e/eb/b32eebd3ccc5c23598fb29235c430f5d.jpg",
+      "https://i.pinimg.com/736x/67/ab/d6/67abd6d4f923e75c8fd846843508dd51.jpg",
+      "https://i.pinimg.com/736x/a4/1a/81/a41a812d382a79916296a8528d6300ba.jpg"
     ],
     rating: 4.9,
     bestTime: "December to March",
@@ -47,9 +42,7 @@ const MountainAdventures = () => {
     price: "Starting from $120 per person",
     activities: [
       "Hiking Tours",
-      "Peak Climbing",
       "Mountain Camping",
-      "Nature Photography",
       "Bird Watching"
     ],
     itinerary: [
