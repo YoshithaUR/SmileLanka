@@ -174,7 +174,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* Slider with enhanced 3D effect and perfect arrangement - Optimized for both mobile and desktop */}
+      {/* Slider with enhanced 3D effect and perfect arrangement - Further enlarged for mobile */}
       <div className="absolute bottom-4 right-4 md:bottom-20 md:right-10 flex items-center space-x-2 md:space-x-6">
         <div className="flex space-x-2 md:space-x-4">
           {visibleSlides.map((slide, index) => (
@@ -183,8 +183,8 @@ const Hero = () => {
               className={`
                 relative overflow-hidden rounded-xl transition-all duration-700 transform-gpu
                 ${index === 0 
-                  ? 'w-20 h-28 md:w-32 md:h-64 scale-105 z-10' 
-                  : 'w-16 h-24 md:w-28 md:h-56 opacity-80'}
+                  ? 'w-28 h-42 md:w-32 md:h-64 scale-105 z-10' 
+                  : 'w-24 h-36 md:w-28 md:h-56 opacity-80'}
                 ${index === 0 ? 'animate-tiltRotate' : ''}
               `}
               style={{
