@@ -174,7 +174,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* Slider with enhanced 3D effect and perfect arrangement - Now visible on mobile */}
+      {/* Slider with enhanced 3D effect and perfect arrangement - Optimized for both mobile and desktop */}
       <div className="absolute bottom-4 right-4 md:bottom-20 md:right-10 flex items-center space-x-2 md:space-x-6">
         <div className="flex space-x-2 md:space-x-4">
           {visibleSlides.map((slide, index) => (
@@ -183,8 +183,8 @@ const Hero = () => {
               className={`
                 relative overflow-hidden rounded-xl transition-all duration-700 transform-gpu
                 ${index === 0 
-                  ? 'w-16 h-24 md:w-24 md:h-48 scale-105 z-10' 
-                  : 'w-12 h-20 md:w-20 md:h-40 opacity-80'}
+                  ? 'w-20 h-28 md:w-32 md:h-64 scale-105 z-10' 
+                  : 'w-16 h-24 md:w-28 md:h-56 opacity-80'}
                 ${index === 0 ? 'animate-tiltRotate' : ''}
               `}
               style={{
@@ -209,14 +209,14 @@ const Hero = () => {
               />
               {index === 0 && (
                 <div
-                  className="absolute inset-0 border border-yellow-400 rounded-xl pointer-events-none animate-pulseGlow"
+                  className="absolute inset-0 border-2 border-yellow-400 rounded-xl pointer-events-none animate-pulseGlow"
                   style={{
                     transform: 'translateZ(20px)',
                   }}
                 />
               )}
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-1 md:p-2">
-                <span className="text-white text-[8px] md:text-xs font-semibold">
+                <span className="text-white text-[10px] md:text-xs font-semibold">
                   {slide.id}/5
                 </span>
               </div>
@@ -224,7 +224,7 @@ const Hero = () => {
           ))}
         </div>
         
-        <span className="text-[8px] md:text-sm text-white">
+        <span className="text-[10px] md:text-sm text-white">
           {current + 1} / {slides.length}
         </span>
       </div>

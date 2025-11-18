@@ -611,9 +611,11 @@ const PackageTemplate = () => {
             >
               Book Now - {packageData.price}
             </Link>
+            <Link to="/contact">
             <button className="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-full transition duration-300 backdrop-blur-sm">
               Contact Us
             </button>
+            </Link>
           </div>
         </div>
       </section>
