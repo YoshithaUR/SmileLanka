@@ -174,25 +174,27 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* Slider with enhanced 3D effect and perfect arrangement */}
-      <div className="absolute bottom-20 right-4 md:right-10 flex items-center space-x-4 md:space-x-6 hidden md:flex">
-        <div className="flex space-x-3 md:space-x-4">
+      {/* Slider with enhanced 3D effect and perfect arrangement - Now visible on mobile */}
+      <div className="absolute bottom-4 right-4 md:bottom-20 md:right-10 flex items-center space-x-2 md:space-x-6">
+        <div className="flex space-x-2 md:space-x-4">
           {visibleSlides.map((slide, index) => (
             <div
               key={slide.id}
               className={`
                 relative overflow-hidden rounded-xl transition-all duration-700 transform-gpu
-                ${index === 0 ? 'w-24 h-48 md:w-32 md:h-64 scale-110 z-10' : 'w-20 h-40 md:w-28 md:h-56 opacity-80'}
+                ${index === 0 
+                  ? 'w-16 h-24 md:w-24 md:h-48 scale-105 z-10' 
+                  : 'w-12 h-20 md:w-20 md:h-40 opacity-80'}
                 ${index === 0 ? 'animate-tiltRotate' : ''}
               `}
               style={{
                 transformStyle: 'preserve-3d',
                 transform: index === 0 
-                  ? `rotateY(${mousePosition.x * 3}deg) rotateX(${mousePosition.y * -3}deg) scale(1.1)` 
+                  ? `rotateY(${mousePosition.x * 3}deg) rotateX(${mousePosition.y * -3}deg) scale(1.05)` 
                   : `rotateY(10deg) scale(0.9)`,
                 boxShadow: index === 0
-                  ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                  : '0 10px 20px -5px rgba(0, 0, 0, 0.3)',
+                  ? '0 15px 30px -8px rgba(0, 0, 0, 0.5)'
+                  : '0 5px 15px -3px rgba(0, 0, 0, 0.3)',
                 transition: 'all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1)'
               }}
             >
@@ -207,14 +209,14 @@ const Hero = () => {
               />
               {index === 0 && (
                 <div
-                  className="absolute inset-0 border-2 border-yellow-400 rounded-xl pointer-events-none animate-pulseGlow"
+                  className="absolute inset-0 border border-yellow-400 rounded-xl pointer-events-none animate-pulseGlow"
                   style={{
                     transform: 'translateZ(20px)',
                   }}
                 />
               )}
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 md:p-3">
-                <span className="text-white text-xs font-semibold">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-1 md:p-2">
+                <span className="text-white text-[8px] md:text-xs font-semibold">
                   {slide.id}/5
                 </span>
               </div>
@@ -222,7 +224,7 @@ const Hero = () => {
           ))}
         </div>
         
-        <span className="text-xs md:text-sm ml-1 md:ml-2 text-white">
+        <span className="text-[8px] md:text-sm text-white">
           {current + 1} / {slides.length}
         </span>
       </div>
