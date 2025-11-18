@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "emailjs-com";
+import { useLocation } from "react-router-dom";
 
- 
 const services = [
   { name: "Tour Package", price: 0 },
   { name: "Hotel Room", price: 0 },
@@ -15,6 +15,7 @@ const steps = ["Personal Info", "Booking Details", "Payment", "Review"];
 
 
 const AdvancedBookingWizard = () => {
+  const location = useLocation();
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
     name: "",
@@ -31,6 +32,32 @@ const AdvancedBookingWizard = () => {
     payLater: false,
   });
   const [errors, setErrors] = useState({});
+
+  // Pre-select package service if coming from a package page
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const packageId = params.get('package');
+    
+    if (packageId) {
+      // Map package IDs to service names
+      const packageServices = {
+        "1": "Cultural Triangle Explorer",
+        "2": "Hill Country Retreat",
+        "3": "Beach Paradise Getaway",
+        "4": "Wildlife Safari Adventure",
+        "5": "Southern Coast Explorer",
+        "6": "Ultimate Sri Lanka Experience"
+      };
+      
+      const serviceName = packageServices[packageId];
+      if (serviceName) {
+        setData(prevData => ({
+          ...prevData,
+          service: serviceName
+        }));
+      }
+    }
+  }, [location]);
 
   const blockInvalidKeys = {
     name: (e) => {

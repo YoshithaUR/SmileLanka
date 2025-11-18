@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -6,6 +6,9 @@ const WildlifeSafaris = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState("overview");
+  const [currentFactIndex, setCurrentFactIndex] = useState(0);
+  const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   
   // Service details
   const service = {
@@ -86,6 +89,38 @@ const WildlifeSafaris = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Auto-slide functionality for facts carousel
+  const slideInterval = useRef(null);
+  
+  useEffect(() => {
+    // Clear any existing interval
+    if (slideInterval.current) {
+      clearInterval(slideInterval.current);
+    }
+    
+    // Set up new interval for auto-sliding
+    slideInterval.current = setInterval(() => {
+      setCurrentFactIndex(prevIndex => 
+        prevIndex === service.facts.length - 1 ? 0 : prevIndex + 1
+      );
+      
+      setCurrentActivityIndex(prevIndex => 
+        prevIndex === service.activities.length - 1 ? 0 : prevIndex + 1
+      );
+      
+      setCurrentGalleryIndex(prevIndex => 
+        prevIndex === service.gallery.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change slide every 5 seconds
+    
+    // Clean up interval on component unmount
+    return () => {
+      if (slideInterval.current) {
+        clearInterval(slideInterval.current);
+      }
+    };
+  }, [service.facts.length, service.activities.length, service.gallery.length]);
+
   // Scroll to main content if coming from "Read More" button
   useEffect(() => {
     if (location.state && location.state.fromReadMore) {
@@ -102,12 +137,12 @@ const WildlifeSafaris = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
       {/* Navbar */}
-      <div className="pt-20">
+      <div>
         <Navbar />
       </div>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden pt-0">
+      <section id="hero" className="relative h-screen flex items-center justify-center pt-20 md:pt-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
@@ -115,7 +150,7 @@ const WildlifeSafaris = () => {
           }}
         />
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png')] opacity-10"></div>
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto mt-8 md:mt-0">
           <div className="inline-block mb-6 px-4 py-2 bg-yellow-600/20 rounded-full backdrop-blur-sm border border-yellow-500/30">
             <span className="text-yellow-400 font-medium">Wildlife Experience</span>
           </div>
@@ -141,7 +176,7 @@ const WildlifeSafaris = () => {
               <span className="font-bold text-lg">{service.price}</span>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
             <button 
               onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-full font-bold text-lg hover:from-yellow-600 hover:to-amber-700 transition-all transform hover:scale-105 shadow-lg shadow-yellow-500/20"
@@ -155,11 +190,8 @@ const WildlifeSafaris = () => {
               Explore Details
             </button>
           </div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+          
+          {/* Removed the mobile arrow key that was displayed at the top */}
         </div>
       </section>
 
@@ -205,7 +237,43 @@ const WildlifeSafaris = () => {
           {/* Key Facts */}
           <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700">
             <h3 className="text-2xl font-bold text-center mb-8 text-yellow-400">Why Choose Our Wildlife Safaris?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            
+            {/* Mobile view - Carousel with single card */}
+            <div className="block md:hidden relative">
+              <div className="overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentFactIndex * 100}%)` }}
+                >
+                  {service.facts.map((fact, index) => (
+                    <div 
+                      key={index} 
+                      className="flex-shrink-0 w-full bg-slate-800/50 backdrop-blur-sm p-5 rounded-2xl border border-slate-700 text-center hover:border-yellow-500/50 transition-all"
+                    >
+                      <div className="text-3xl mb-3 text-yellow-400">★</div>
+                      <p className="text-slate-300">{fact}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Dots indicator */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {service.facts.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentFactIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentFactIndex ? 'bg-yellow-500' : 'bg-slate-600'
+                    }`}
+                    aria-label={`Go to fact ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            {/* Desktop view - Grid layout */}
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {service.facts.map((fact, index) => (
                 <div 
                   key={index} 
@@ -233,14 +301,64 @@ const WildlifeSafaris = () => {
             <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full mt-4"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Mobile view - Carousel with single card */}
+          <div className="block md:hidden relative">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentActivityIndex * 100}%)` }}
+              >
+                {service.activities.map((activity, index) => (
+                  <div 
+                    key={index} 
+                    className="flex-shrink-0 w-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 hover:border-yellow-500/50 transition-all group"
+                  >
+                    <div className="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-all">
+                      <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-white">{activity}</h3>
+                    <p className="text-slate-400 mb-6">
+                      Experience the beauty and excitement of {activity.toLowerCase()} in Sri Lanka's most spectacular wildlife environments.
+                    </p>
+                    <button className="text-yellow-400 font-medium flex items-center group-hover:text-yellow-300 transition-colors">
+                      Learn more
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {service.activities.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentActivityIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentActivityIndex ? 'bg-yellow-500' : 'bg-slate-600'
+                  }`}
+                  aria-label={`Go to activity ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Desktop view - Grid layout */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {service.activities.map((activity, index) => (
               <div 
                 key={index} 
                 className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 hover:border-yellow-500/50 transition-all group"
               >
                 <div className="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-all">
-                  <div className="text-3xl text-yellow-400">🦁</div>
+                  <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                  </svg>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">{activity}</h3>
                 <p className="text-slate-400 mb-6">
@@ -354,7 +472,50 @@ const WildlifeSafaris = () => {
             <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full mt-4"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Mobile view - Carousel with single card */}
+          <div className="block md:hidden relative">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentGalleryIndex * 100}%)` }}
+              >
+                {service.gallery.map((img, index) => (
+                  <div 
+                    key={index} 
+                    className="flex-shrink-0 w-full group rounded-3xl overflow-hidden shadow-lg border-4 border-transparent hover:border-yellow-500/50 transition-all cursor-pointer"
+                  >
+                    <div className="relative h-80">
+                      <img 
+                        src={img} 
+                        alt={`${service.name} ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span className="text-white font-medium">View Image</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {service.gallery.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentGalleryIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentGalleryIndex ? 'bg-yellow-500' : 'bg-slate-600'
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Desktop view - Grid layout */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {service.gallery.map((img, index) => (
               <div 
                 key={index} 

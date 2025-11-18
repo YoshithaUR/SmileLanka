@@ -31,7 +31,7 @@ const PremiumLuxury = () => {
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     ],
     price: "$2,799",
-    duration: "10 days",
+    duration: "13 Night, 14 Day package",
     rating: 4.9,
     bestTime: "December to March",
     inclusions: [

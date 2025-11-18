@@ -31,7 +31,7 @@ const GoldenExperience = () => {
       "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     ],
     price: "$1,499",
-    duration: "7 days",
+    duration: "6 Night, 7 Day package",
     rating: 4.7,
     bestTime: "December to March",
     inclusions: [

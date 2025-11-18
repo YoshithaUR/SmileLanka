@@ -36,6 +36,7 @@ import CulturalTours from "./pages/services/CulturalTours.jsx";
 import CityExploration from "./pages/services/CityExploration.jsx";
 import WaterSports from "./pages/services/WaterSports.jsx";
 import BookingForm from "./pages/BookingForm .jsx";
+import CustomTour from "./pages/CustomTour.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -80,6 +81,7 @@ const App = () => {
                 } />
                 <Route path="/packages" element={<Packages />} />
                 <Route path="/packages/:id" element={<PackageTemplate />} />
+                <Route path="/custom-tour" element={<CustomTour />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/gallery-upload" element={<GalleryUpload />} />
                 <Route path="/destinations/galle-fort" element={<GalleFort />} />
