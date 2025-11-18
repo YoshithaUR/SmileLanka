@@ -35,6 +35,7 @@ import WildlifeSafaris from "./pages/services/WildlifeSafaris.jsx";
 import CulturalTours from "./pages/services/CulturalTours.jsx";
 import CityExploration from "./pages/services/CityExploration.jsx";
 import WaterSports from "./pages/services/WaterSports.jsx";
+import BookingForm from "./pages/BookingForm .jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -82,6 +83,8 @@ const App = () => {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/gallery-upload" element={<GalleryUpload />} />
                 <Route path="/destinations/galle-fort" element={<GalleFort />} />
+                <Route path="/book" element={<BookingForm/>} />
+
                 {/* Individual destination routes */}
                 <Route path="/destinations/sigiriya-rock-fortress" element={<SigiriyaRockFortress />} />
                 <Route path="/destinations/yala-national-park" element={<YalaNational />} />

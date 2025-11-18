@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SigiriyaRockFortress = () => {
   const navigate = useNavigate();
@@ -331,6 +331,7 @@ const SigiriyaRockFortress = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
+            <Link to="/book">
             <button 
               className="bg-black hover:bg-gray-900 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full transition duration-300 transform hover:-translate-y-1 w-full sm:w-auto"
               data-aos="fade-up"
@@ -338,6 +339,7 @@ const SigiriyaRockFortress = () => {
             >
               Book Now
             </button>
+            </Link>
             <button 
               className="bg-white/20 hover:bg-white/30 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full transition duration-300 backdrop-blur-sm w-full sm:w-auto"
               data-aos="fade-up"

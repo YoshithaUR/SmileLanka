@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Unawatuna = () => {
   const navigate = useNavigate();
@@ -346,6 +346,7 @@ const Unawatuna = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
+             <Link to="/book">
             <button 
               className="bg-black hover:bg-gray-900 text-white font-bold py-4 px-8 rounded-full transition duration-300 transform hover:-translate-y-1"
               data-aos="fade-up"
@@ -353,6 +354,7 @@ const Unawatuna = () => {
             >
               Book Now
             </button>
+            </Link>
             <button 
               className="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-full transition duration-300 backdrop-blur-sm"
               data-aos="fade-up"
